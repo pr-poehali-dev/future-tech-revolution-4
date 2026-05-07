@@ -101,7 +101,7 @@ export default function TechStack() {
     {
       icon: "Code2",
       title: "Python-приложения",
-      description: "Разработка приложений и ботов любой сложности",
+      description: "Сайты, десктоп-приложения, боты — любые решения на Python",
       price: "по запросу",
       priceNote: "уточняйте у менеджера",
       tag: "Любая сложность",
