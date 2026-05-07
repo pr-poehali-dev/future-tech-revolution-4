@@ -2,97 +2,123 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code2, Layout, Server, Database, Wrench, Binary } from "lucide-react"
+import Icon from "@/components/ui/icon"
+
+interface Service {
+  icon: string
+  title: string
+  description: string
+  price: string
+  priceNote: string
+  features: string[]
+  tag: string
+}
 
 export default function TechStack() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [selectedService, setSelectedService] = useState<number | null>(null)
 
-  const technologies = {
-    languages: {
-      icon: <Code2 className="h-6 w-6" />,
-      title: "Языки программирования",
-      description: "Основные языки для системной и прикладной разработки",
-      skills: [
-        { name: "C++", level: 90 },
-        { name: "C", level: 85 },
-        { name: "Java", level: 88 },
-        { name: "Ruby", level: 82 },
-        { name: "Python", level: 85 },
-        { name: "TypeScript", level: 90 },
-        { name: "JavaScript", level: 90 },
+  const services: Service[] = [
+    {
+      icon: "MessageSquare",
+      title: "SMS-рассылки",
+      description: "Мгновенная доставка сообщений на любой номер",
+      price: "от 1,5 ₽",
+      priceNote: "за сообщение",
+      tag: "Популярно",
+      features: [
+        "Доставка на все операторы РФ и СНГ",
+        "Персонализация имени получателя",
+        "Отчёты о доставке в реальном времени",
+        "Таргетинг по базе клиентов",
+        "Плановые отправки по расписанию",
+        "Антиспам и легальные маршруты",
       ],
     },
-    concepts: {
-      icon: <Binary className="h-6 w-6" />,
-      title: "Инженерные концепции",
-      description: "Фундаментальные принципы разработки ПО",
-      skills: [
-        { name: "Структуры данных", level: 95 },
-        { name: "Алгоритмы", level: 90 },
-        { name: "ООП", level: 95 },
-        { name: "Паттерны", level: 85 },
-        { name: "Системный дизайн", level: 80 },
-        { name: "Многопоточность", level: 85 },
+    {
+      icon: "MessageCircle",
+      title: "WhatsApp-рассылки",
+      description: "Охват аудитории в самом популярном мессенджере",
+      price: "от 3 ₽",
+      priceNote: "за сообщение",
+      tag: "Высокий охват",
+      features: [
+        "Текст, фото, видео, документы",
+        "Персональные сообщения по базе",
+        "Высокий процент прочтения (95%+)",
+        "Двусторонняя связь с клиентами",
+        "Интеграция с CRM",
+        "Статистика открытий и кликов",
       ],
     },
-    frontend: {
-      icon: <Layout className="h-6 w-6" />,
-      title: "Frontend-разработка",
-      description: "Современные технологии веб-разработки",
-      skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Redux", level: 85 },
-        { name: "WebGL", level: 75 },
+    {
+      icon: "Radio",
+      title: "Viber-рассылки",
+      description: "Продвижение через брендированные сообщения Viber",
+      price: "от 2,5 ₽",
+      priceNote: "за сообщение",
+      tag: "С кнопками",
+      features: [
+        "Брендированные сообщения с логотипом",
+        "Кнопки с призывом к действию",
+        "Поддержка rich-media контента",
+        "Официальный канал отправки",
+        "Высокое доверие аудитории",
+        "Детальная аналитика",
       ],
     },
-    backend: {
-      icon: <Server className="h-6 w-6" />,
-      title: "Backend-разработка",
-      description: "Серверные фреймворки и технологии",
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Spring Boot", level: 85 },
-        { name: "Ruby on Rails", level: 80 },
+    {
+      icon: "Send",
+      title: "Telegram-рассылки и боты",
+      description: "Автоматизация и массовые коммуникации в Telegram",
+      price: "от 5 000 ₽",
+      priceNote: "за разработку бота",
+      tag: "Автоматизация",
+      features: [
+        "Разработка Telegram-ботов под ключ",
+        "Рассылки по подписчикам канала",
+        "Воронки продаж в боте",
+        "Автоответы и сценарии",
+        "Интеграция с платёжными системами",
+        "Поддержка и обновление",
       ],
     },
-    database: {
-      icon: <Database className="h-6 w-6" />,
-      title: "Базы данных",
-      description: "Управление и оптимизация БД",
-      skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MySQL", level: 75 },
-        { name: "Redis", level: 70 },
+    {
+      icon: "Code2",
+      title: "Python-приложения",
+      description: "Разработка любых решений на Python — от ботов до сложных систем",
+      price: "от 15 000 ₽",
+      priceNote: "за проект",
+      tag: "Любая сложность",
+      features: [
+        "Парсинг и автоматизация данных",
+        "Боты для любых платформ",
+        "API-интеграции с сервисами",
+        "Аналитические системы и дашборды",
+        "Автоматизация бизнес-процессов",
+        "Техническая поддержка после сдачи",
       ],
     },
-    tools: {
-      icon: <Wrench className="h-6 w-6" />,
-      title: "Инструменты",
-      description: "Инструменты и среды разработки",
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Linux/Unix", level: 85 },
-        { name: "CMake", level: 80 },
-        { name: "Visual Studio", level: 85 },
+    {
+      icon: "Smartphone",
+      title: "Мобильные и веб-приложения",
+      description: "Создаём приложения под ваш бизнес с нуля",
+      price: "от 30 000 ₽",
+      priceNote: "за проект",
+      tag: "Под ключ",
+      features: [
+        "Анализ задачи и прототипирование",
+        "Адаптивный дизайн (mobile-first)",
+        "Личный кабинет и авторизация",
+        "CRM и база данных",
+        "Интеграция с мессенджерами",
+        "Сопровождение и развитие проекта",
       ],
     },
-  }
+  ]
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
-
-  const scaleUp = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1 },
   }
 
   return (
@@ -107,83 +133,72 @@ export default function TechStack() {
           className="text-center mb-16"
         >
           <Badge variant="outline" className="mb-4">
-            Навыки
+            Услуги и цены
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Техническая экспертиза</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Что мы делаем</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto mt-2">Нажмите на карточку, чтобы увидеть подробности</p>
+          <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.entries(technologies).map(([key, category]) => (
+          {services.map((service, index) => (
             <motion.div
-              key={key}
+              key={index}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              variants={scaleUp}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              variants={fadeIn}
             >
               <Card
-                className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                  selectedCategory === key ? "ring-2 ring-primary" : ""
+                className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 ${
+                  selectedService === index ? "ring-2 ring-primary" : ""
                 }`}
-                onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
+                onClick={() => setSelectedService(selectedService === index ? null : index)}
               >
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-primary/10 p-3 rounded-full">{category.icon}</div>
-                    <div>
-                      <h3 className="text-lg font-semibold">{category.title}</h3>
-                      <p className="text-sm text-muted-foreground">{category.description}</p>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Icon name={service.icon as "MessageSquare"} size={24} className="text-primary" />
                     </div>
+                    <Badge variant="secondary" className="text-xs">{service.tag}</Badge>
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-1">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span className="text-2xl font-bold text-primary">{service.price}</span>
+                    <span className="text-sm text-muted-foreground">{service.priceNote}</span>
                   </div>
 
                   <AnimatePresence>
-                    {selectedCategory === key && (
-                      <motion.div
+                    {selectedService === index && (
+                      <motion.ul
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="space-y-4"
+                        className="space-y-2 border-t border-border pt-4"
                       >
-                        {category.skills.map((skill, index) => (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -20 }}
+                        {service.features.map((feature, fi) => (
+                          <motion.li
+                            key={fi}
+                            initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="space-y-2"
+                            transition={{ delay: fi * 0.07 }}
+                            className="flex items-center gap-2 text-sm text-muted-foreground"
                           >
-                            <div className="flex justify-between text-sm">
-                              <span className="font-medium">{skill.name}</span>
-                              <span className="text-muted-foreground">{skill.level}%</span>
-                            </div>
-                            <div className="w-full bg-muted rounded-full h-1.5">
-                              <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: `${skill.level}%` }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-primary h-1.5 rounded-full"
-                              />
-                            </div>
-                          </motion.div>
+                            <Icon name="Check" size={14} className="text-primary shrink-0" />
+                            {feature}
+                          </motion.li>
                         ))}
-                      </motion.div>
+                      </motion.ul>
                     )}
                   </AnimatePresence>
 
-                  {selectedCategory !== key && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {category.skills.slice(0, 3).map((skill, index) => (
-                        <Badge key={index} variant="secondary">
-                          {skill.name}
-                        </Badge>
-                      ))}
-                      {category.skills.length > 3 && (
-                        <Badge variant="secondary">+{category.skills.length - 3} ещё</Badge>
-                      )}
-                    </div>
+                  {selectedService !== index && (
+                    <p className="text-xs text-primary mt-2">Нажмите, чтобы узнать подробнее →</p>
                   )}
                 </CardContent>
               </Card>
@@ -200,9 +215,8 @@ export default function TechStack() {
           className="mt-12 text-center text-muted-foreground"
         >
           <p className="max-w-2xl mx-auto">
-            Обширный опыт как в низкоуровневом системном программировании, так и в современной
-            веб-разработке позволяет применять комплексное понимание принципов инженерии ПО
-            в каждом проекте.
+            Нужно что-то нестандартное? Мы разрабатываем индивидуальные решения под любую задачу.
+            Напишите — обсудим и рассчитаем стоимость бесплатно.
           </p>
         </motion.div>
       </div>

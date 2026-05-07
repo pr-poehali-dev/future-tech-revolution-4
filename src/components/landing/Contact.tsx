@@ -7,13 +7,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/components/ui/use-toast"
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    subject: "",
+    phone: "",
+    service: "",
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -32,41 +32,35 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
     toast({
-      title: "Сообщение отправлено!",
-      description: "Спасибо за ваше сообщение. Я свяжусь с вами в ближайшее время.",
+      title: "Заявка отправлена!",
+      description: "Мы свяжемся с вами в течение 15 минут в рабочее время.",
     })
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+    setFormData({ name: "", phone: "", service: "", message: "" })
     setIsSubmitting(false)
   }
 
   const contactInfo = [
     {
-      icon: <Mail className="h-6 w-6 text-primary" />,
-      title: "Email",
-      value: "hello@devcraft.example",
-      link: "mailto:hello@devcraft.example",
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Телефон",
+      icon: "Phone",
+      title: "Телефон / WhatsApp",
       value: "+7 (999) 123-45-67",
       link: "tel:+79991234567",
     },
     {
-      icon: <MapPin className="h-6 w-6 text-primary" />,
-      title: "Локация",
-      value: "Москва, Россия",
-      link: null,
+      icon: "Send",
+      title: "Telegram",
+      value: "@richsmm",
+      link: "https://t.me/richsmm",
+    },
+    {
+      icon: "Mail",
+      title: "Email",
+      value: "hello@richsmm.ru",
+      link: "mailto:hello@richsmm.ru",
     },
   ]
 
@@ -84,8 +78,11 @@ export default function Contact() {
           <Badge variant="outline" className="mb-4">
             Контакты
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Связаться со мной</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Обсудим ваш проект</h2>
+          <p className="text-muted-foreground max-w-md mx-auto mt-2">
+            Оставьте заявку — ответим в течение 15 минут и бесплатно рассчитаем стоимость
+          </p>
+          <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -106,51 +103,52 @@ export default function Contact() {
                       <Input
                         id="name"
                         name="name"
-                        placeholder="Иван Петров"
+                        placeholder="Александр"
                         value={formData.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Ваш Email</Label>
+                      <Label htmlFor="phone">Телефон / Telegram</Label>
                       <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="ivan@example.com"
-                        value={formData.email}
+                        id="phone"
+                        name="phone"
+                        placeholder="+7 (999) 000-00-00"
+                        value={formData.phone}
                         onChange={handleChange}
                         required
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Тема</Label>
+                    <Label htmlFor="service">Какая услуга интересует?</Label>
                     <Input
-                      id="subject"
-                      name="subject"
-                      placeholder="Запрос по проекту"
-                      value={formData.subject}
+                      id="service"
+                      name="service"
+                      placeholder="SMS-рассылки, Telegram-бот, Python-приложение..."
+                      value={formData.service}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Сообщение</Label>
+                    <Label htmlFor="message">Расскажите о задаче</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Хотел бы обсудить проект..."
-                      rows={6}
+                      placeholder="Опишите вашу задачу: что нужно сделать, примерные сроки, бюджет..."
+                      rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      required
                     />
                   </div>
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? "Отправка..." : "Отправить"}
+                  <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? "Отправляем..." : "Отправить заявку — бесплатно"}
                   </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                  </p>
                 </form>
               </CardContent>
             </Card>
@@ -163,20 +161,22 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={fadeIn}
           >
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactInfo.map((info, index) => (
                 <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-full">{info.icon}</div>
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-primary/10 p-3 rounded-full">
+                        <Icon name={info.icon as "Phone"} size={20} className="text-primary" />
+                      </div>
                       <div>
-                        <h4 className="text-lg font-semibold mb-1">{info.title}</h4>
+                        <h4 className="text-sm font-semibold mb-1">{info.title}</h4>
                         {info.link ? (
-                          <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors">
+                          <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-muted-foreground">{info.value}</p>
+                          <p className="text-muted-foreground text-sm">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -184,26 +184,23 @@ export default function Contact() {
                 </Card>
               ))}
 
-              <Card className="mt-8">
-                <CardContent className="p-6">
-                  <h4 className="text-lg font-semibold mb-4">Подписаться</h4>
-                  <div className="flex gap-4">
-                    <Button variant="outline" size="icon" className="rounded-full" asChild>
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="icon" className="rounded-full" asChild>
-                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="icon" className="rounded-full" asChild>
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                        <Github className="h-5 w-5" />
-                      </a>
-                    </Button>
-                  </div>
+              <Card className="bg-primary/5 border-primary/20">
+                <CardContent className="p-5">
+                  <h4 className="font-semibold mb-2 text-primary">Почему RichSMM?</h4>
+                  <ul className="space-y-2">
+                    {[
+                      "8+ лет в digital",
+                      "Своя команда разработчиков",
+                      "50+ реализованных проектов",
+                      "Ответ за 15 минут",
+                      "Бесплатный расчёт стоимости",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Icon name="Check" size={13} className="text-primary shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             </div>

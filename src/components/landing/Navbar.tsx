@@ -30,8 +30,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Главная", href: "home" },
-    { name: "Обо мне", href: "about" },
-    { name: "Навыки", href: "tech-stack" },
+    { name: "О нас", href: "about" },
+    { name: "Услуги", href: "tech-stack" },
     { name: "Проекты", href: "projects" },
     { name: "Отзывы", href: "testimonials" },
     { name: "Контакты", href: "contact" },
@@ -47,10 +47,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <button onClick={() => scrollToSection("home")} className="text-2xl font-bold text-primary">
-            Dev<span className="text-destructive">Craft</span>
+            Rich<span className="text-foreground">SMM</span>
           </button>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
@@ -61,17 +60,15 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            <Button>Резюме</Button>
+            <Button onClick={() => scrollToSection("contact")}>Заказать</Button>
           </nav>
 
-          {/* Mobile Navigation Toggle */}
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X /> : <Menu />}
           </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4">
@@ -85,7 +82,7 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <Button className="w-full">Резюме</Button>
+              <Button className="w-full" onClick={() => scrollToSection("contact")}>Заказать</Button>
             </nav>
           </div>
         </div>

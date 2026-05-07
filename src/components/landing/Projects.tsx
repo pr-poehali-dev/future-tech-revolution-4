@@ -4,19 +4,19 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { ExternalLink, Github, ChevronDown } from "lucide-react"
+import { ChevronDown } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 interface Project {
   id: number
   title: string
   shortDescription: string
   description: string
-  image: string
   tags: string[]
   features: string[]
-  demoLink: string
-  githubLink: string
+  result: string
   fullDescription: string
+  icon: string
 }
 
 export default function Projects() {
@@ -31,106 +31,111 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce платформа",
-      shortDescription: "Полнофункциональная платформа интернет-магазина с управлением товарами.",
-      description:
-        "Полнофункциональная платформа интернет-магазина с управлением товарами, корзиной и обработкой платежей.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["C++", "Qt", "SQLite", "CMake"],
+      title: "SMS-кампания для ритейл-сети",
+      shortDescription: "Массовая SMS-рассылка для сети магазинов с персонализацией и аналитикой",
+      description: "Запустили серию рассылок для сети из 30 магазинов с сегментацией по базе 150 000 клиентов.",
+      tags: ["SMS", "Персонализация", "Ритейл"],
+      icon: "MessageSquare",
       features: [
-        "Система управления складом",
-        "Отслеживание остатков в реальном времени",
-        "Безопасная обработка платежей",
-        "Панель управления заказами",
-        "Аналитика клиентов",
+        "База 150 000 контактов",
+        "Сегментация по покупательской истории",
+        "А/Б тестирование текстов",
+        "Доставка 99,2%",
+        "Отчёт в реальном времени",
       ],
-      demoLink: "#",
-      githubLink: "#",
+      result: "+23% к продажам в день рассылки",
       fullDescription:
-        "Эта e-commerce платформа предоставляет бизнесу комплексное решение для онлайн-продаж. Построена на C++ и Qt для высокой производительности и кроссплатформенности. Включает адаптивный дизайн, каталог товаров с фильтрацией и поиском, функционал корзины, интеграцию безопасной оплаты, авторизацию пользователей и админ-панель для управления товарами, заказами и клиентами.",
+        "Сеть магазинов обратилась к нам для привлечения клиентов в период распродажи. Мы разработали стратегию сегментированной SMS-рассылки: разбили базу на 5 групп по покупательскому поведению, создали персональные тексты для каждой группы и провели A/B тест. Результат — 23% рост продаж в день рассылки и окупаемость кампании в 8x.",
     },
     {
       id: 2,
-      title: "Система управления задачами",
-      shortDescription: "Приложение для командной работы с обновлениями в реальном времени.",
-      description: "Приложение для командной работы с обновлениями в реальном времени и рабочими пространствами.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Java", "Spring Boot", "React", "PostgreSQL"],
+      title: "WhatsApp-воронка для онлайн-школы",
+      shortDescription: "Автоматическая воронка продаж через WhatsApp для образовательного проекта",
+      description: "Создали серию прогревающих сообщений для конвертации лидов в покупателей курсов.",
+      tags: ["WhatsApp", "Воронка", "EdTech"],
+      icon: "MessageCircle",
       features: [
-        "Совместная работа в реальном времени",
-        "Зависимости между задачами",
-        "Распределение ресурсов",
-        "Отслеживание прогресса",
-        "Управление командой",
+        "12-шаговая воронка прогрева",
+        "Автоответы на частые вопросы",
+        "Интеграция с платёжной системой",
+        "Напоминания о вебинарах",
+        "Сегментация по интересам",
       ],
-      demoLink: "#",
-      githubLink: "#",
+      result: "Конверсия в покупку выросла с 4% до 11%",
       fullDescription:
-        "Система управления задачами помогает командам эффективно организовывать и отслеживать работу. Построена на Java Spring Boot для бэкенда и React для фронтенда. Включает создание и назначение задач, сроки и напоминания, отслеживание прогресса, вложения файлов, комментарии и обсуждения, рабочие пространства команд и обновления в реальном времени.",
+        "Онлайн-школа английского языка хотела автоматизировать продажи курсов через WhatsApp. Мы разработали 12-шаговую воронку: от первого касания до покупки. Включили прогревающие материалы, автоответы, напоминания о вебинарах и специальные предложения. Конверсия выросла с 4% до 11%, а стоимость привлечения клиента снизилась на 40%.",
     },
     {
       id: 3,
-      title: "Монитор системных ресурсов",
-      shortDescription: "Комплексный инструмент мониторинга с аналитикой в реальном времени.",
-      description: "Комплексный инструмент мониторинга с аналитикой и отслеживанием производительности.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["C++", "Python", "Qt", "Linux"],
+      title: "Telegram-бот для доставки еды",
+      shortDescription: "Полноценный бот-магазин с приёмом заказов, оплатой и уведомлениями",
+      description: "Разработали бота для ресторана, который принимает заказы и обрабатывает оплату 24/7.",
+      tags: ["Telegram-бот", "Python", "Доставка"],
+      icon: "Send",
       features: [
-        "Мониторинг CPU/памяти",
-        "Управление процессами",
-        "Сетевая аналитика",
-        "Отслеживание использования диска",
-        "Оповещения о производительности",
+        "Каталог блюд с фото и ценами",
+        "Корзина и оформление заказа",
+        "Онлайн-оплата (СБП, карта)",
+        "Статус заказа в реальном времени",
+        "Уведомления курьеру и клиенту",
       ],
-      demoLink: "#",
-      githubLink: "#",
+      result: "Обрабатывает 200+ заказов в день без менеджера",
       fullDescription:
-        "Монитор системных ресурсов обеспечивает анализ производительности системы в реальном времени. Построен преимущественно на C++ с Python для анализа данных. Приложение отслеживает загрузку CPU, потребление памяти, сетевой трафик и дисковые операции, предоставляя детальную аналитику и оповещения для системных администраторов.",
+        "Ресторан хотел принимать заказы через Telegram без дополнительного персонала. Мы создали полноценный бот-магазин: красивое меню с фотографиями, корзину, интеграцию с платёжными системами и систему уведомлений. Бот полностью заменил менеджера по приёму заказов — теперь обрабатывает 200+ заказов в день круглосуточно.",
     },
     {
       id: 4,
-      title: "Проект компилятора",
-      shortDescription: "Компилятор собственного языка программирования с оптимизацией.",
-      description: "Компилятор собственного языка программирования с продвинутыми оптимизациями.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["C", "LLVM", "Assembly", "Python"],
-      features: ["Лексический анализ", "Синтаксический разбор", "Оптимизация кода", "Обработка ошибок", "Генерация ассемблера"],
-      demoLink: "#",
-      githubLink: "#",
+      title: "Python-парсер для мониторинга цен",
+      shortDescription: "Система автоматического мониторинга цен конкурентов с уведомлениями",
+      description: "Написали инструмент, который каждый час проверяет цены конкурентов и присылает отчёт.",
+      tags: ["Python", "Парсинг", "Аналитика"],
+      icon: "Code2",
+      features: [
+        "Мониторинг 15 сайтов конкурентов",
+        "Обновление каждый час",
+        "Уведомление при изменении цен",
+        "Excel-отчёты по периодам",
+        "Дашборд с графиками",
+      ],
+      result: "Сэкономил 40 часов ручной работы в месяц",
       fullDescription:
-        "Проект компилятора реализует собственный язык программирования с современными возможностями и оптимизациями. Построен на C и LLVM, включает комплексную обработку ошибок и возможности оптимизации кода. Компилятор выполняет лексический анализ, синтаксический разбор, семантический анализ и генерирует оптимизированный ассемблерный код.",
+        "Интернет-магазин электроники тратил 40 часов в месяц на ручной мониторинг цен конкурентов. Мы разработали Python-систему, которая автоматически проверяет 15 сайтов каждый час, сравнивает цены с собственным прайсом и присылает уведомления при значительных изменениях. Добавили дашборд с историей цен и Excel-отчёты для руководства.",
     },
     {
       id: 5,
-      title: "Распределенная база данных",
-      shortDescription: "Распределенная СУБД с высокой доступностью.",
-      description: "Распределенная СУБД с высокой доступностью и отказоустойчивостью.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["C++", "Rust", "gRPC", "Redis"],
-      features: ["Репликация данных", "Шардирование", "Отказоустойчивость", "Балансировка нагрузки", "Управление транзакциями"],
-      demoLink: "#",
-      githubLink: "#",
+      title: "Viber-рассылка для банка",
+      shortDescription: "Брендированные Viber-сообщения для информирования клиентов о продуктах",
+      description: "Провели серию брендированных рассылок с кнопками CTA для финансовой организации.",
+      tags: ["Viber", "Финансы", "Брендинг"],
+      icon: "Radio",
+      features: [
+        "Брендированный отправитель",
+        "Кнопки с переходом на сайт",
+        "Rich-media контент",
+        "Таргетинг по сегментам",
+        "Аналитика кликов и конверсий",
+      ],
+      result: "CTR 8,4% — в 3 раза выше email",
       fullDescription:
-        "Распределенная система баз данных обеспечивает высокую доступность и отказоустойчивость для масштабных приложений. Построена на C++ и Rust для производительности, реализует продвинутые функции: репликацию данных, шардирование и автоматический failover. Система включает инструменты мониторинга и управления.",
+        "Банк искал эффективный канал для информирования клиентов о новых продуктах. Мы предложили Viber как альтернативу email: брендированные сообщения с логотипом, кнопками перехода и rich-media. Провели 3 серии рассылок по сегментам клиентской базы. CTR составил 8,4% — это в 3 раза выше среднего показателя email-маркетинга.",
     },
     {
       id: 6,
-      title: "Фреймворк нейросетей",
-      shortDescription: "Фреймворк глубокого обучения с оптимизацией производительности.",
-      description: "Фреймворк глубокого обучения с CUDA-ускорением и функциями оптимизации.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["C++", "CUDA", "Python", "CMake"],
+      title: "CRM-система на Python",
+      shortDescription: "Кастомная CRM для агентства недвижимости с интеграцией мессенджеров",
+      description: "Разработали систему управления клиентами с автоматическими рассылками и напоминаниями.",
+      tags: ["Python", "CRM", "Интеграция"],
+      icon: "Smartphone",
       features: [
-        "CUDA-ускорение",
-        "Автоматическое дифференцирование",
-        "Оптимизация моделей",
-        "Пайплайны обучения",
-        "Профилирование производительности",
+        "База клиентов и объектов",
+        "Автоматические напоминания",
+        "Рассылки из CRM (SMS, WA, TG)",
+        "История взаимодействий",
+        "Аналитика воронки продаж",
       ],
-      demoLink: "#",
-      githubLink: "#",
+      result: "Скорость обработки заявок выросла в 3 раза",
       fullDescription:
-        "Фреймворк нейросетей обеспечивает высокопроизводительные возможности глубокого обучения. Построен преимущественно на C++ с CUDA-ускорением. Предлагает инструменты для построения и обучения нейросетей, включая автоматическое дифференцирование, оптимизацию моделей и профилирование производительности.",
+        "Агентство недвижимости работало в Excel и теряло клиентов из-за медленной обработки заявок. Мы разработали кастомную CRM на Python: база клиентов с историей, автоматические напоминания менеджерам, встроенные рассылки через SMS, WhatsApp и Telegram прямо из системы. Скорость обработки заявок выросла в 3 раза, а потери клиентов снизились на 65%.",
     },
   ]
 
@@ -146,9 +151,9 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <Badge variant="outline" className="mb-4">
-            Портфолио
+            Кейсы
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Избранные проекты</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши проекты</h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
@@ -163,22 +168,28 @@ export default function Projects() {
               variants={fadeIn}
             >
               <Card
-                className={`group h-full cursor-pointer transition-all duration-300 hover:shadow-lg ${
+                className={`group h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 ${
                   expandedProject === project.id ? "ring-2 ring-primary" : ""
                 }`}
                 onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
               >
-                <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-background/20 p-6 flex flex-col justify-end">
-                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground text-sm">{project.shortDescription}</p>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Icon name={project.icon as "MessageSquare"} size={24} className="text-primary" />
                     </div>
+                    <div className="flex flex-wrap gap-1 justify-end">
+                      {project.tags.map((tag, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">{tag}</Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{project.shortDescription}</p>
+
+                  <div className="bg-primary/10 rounded-lg px-3 py-2 mb-4">
+                    <p className="text-sm font-semibold text-primary">📈 {project.result}</p>
                   </div>
 
                   <AnimatePresence>
@@ -188,126 +199,59 @@ export default function Projects() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="p-6 border-t"
+                        className="border-t border-border pt-4"
                       >
-                        <div className="space-y-4">
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag, i) => (
-                              <Badge key={i} variant="secondary">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-
-                          <div className="space-y-2">
-                            <h4 className="font-semibold">Ключевые функции:</h4>
-                            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                              {project.features.map((feature, i) => (
-                                <li key={i}>{feature}</li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          <div className="flex gap-4 pt-2">
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                window.open(project.githubLink, "_blank")
-                              }}
-                            >
-                              <Github className="h-4 w-4 mr-2" />
-                              Код
-                            </Button>
-                            <Button
-                              size="sm"
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                window.open(project.demoLink, "_blank")
-                              }}
-                            >
-                              <ExternalLink className="h-4 w-4 mr-2" />
-                              Демо
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                setSelectedProject(project)
-                              }}
-                            >
-                              Подробнее
-                            </Button>
-                          </div>
-                        </div>
+                        <ul className="space-y-1 mb-4">
+                          {project.features.map((f, fi) => (
+                            <li key={fi} className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Icon name="Check" size={13} className="text-primary shrink-0" />
+                              {f}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button
+                          size="sm"
+                          className="w-full"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setSelectedProject(project)
+                          }}
+                        >
+                          Подробнее о проекте
+                        </Button>
                       </motion.div>
                     )}
                   </AnimatePresence>
 
-                  <div className="p-4 text-center">
-                    <ChevronDown
-                      className={`w-6 h-6 mx-auto transition-transform duration-300 ${
-                        expandedProject === project.id ? "rotate-180" : ""
-                      }`}
-                    />
-                  </div>
+                  {expandedProject !== project.id && (
+                    <div className="flex items-center gap-1 text-xs text-primary mt-2">
+                      <ChevronDown size={14} />
+                      Подробнее
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
-      </div>
 
-      {selectedProject && (
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-3xl">
-            <DialogHeader>
-              <DialogTitle>{selectedProject.title}</DialogTitle>
-              <DialogDescription>
-                <div className="flex flex-wrap gap-2 mt-2 mb-4">
-                  {selectedProject.tags.map((tag, i) => (
-                    <Badge key={i} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-4">
-              <img
-                src={selectedProject.image || "/placeholder.svg"}
-                alt={selectedProject.title}
-                className="w-full rounded-md object-cover aspect-video"
-              />
-              <p className="text-muted-foreground">{selectedProject.fullDescription}</p>
+          {selectedProject && (
+            <DialogContent className="max-w-lg">
+              <DialogHeader>
+                <DialogTitle>{selectedProject.title}</DialogTitle>
+                <DialogDescription>{selectedProject.description}</DialogDescription>
+              </DialogHeader>
               <div className="space-y-4">
-                <h4 className="font-semibold">Ключевые функции:</h4>
-                <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                  {selectedProject.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground text-sm">{selectedProject.fullDescription}</p>
+                <div className="bg-primary/10 rounded-lg p-3">
+                  <p className="font-semibold text-primary">Результат: {selectedProject.result}</p>
+                </div>
               </div>
-              <div className="flex justify-end gap-4 mt-4">
-                <Button variant="outline" asChild>
-                  <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" />
-                    Смотреть код
-                  </a>
-                </Button>
-                <Button asChild>
-                  <a href={selectedProject.demoLink} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Демо
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </DialogContent>
+            </DialogContent>
+          )}
         </Dialog>
-      )}
+      </div>
     </section>
   )
 }

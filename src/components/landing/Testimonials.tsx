@@ -13,48 +13,43 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Сергей Петров",
-      position: "CTO в TechFlow Solutions",
+      name: "Андрей Климов",
+      position: "Владелец сети кафе «Вкусно здесь»",
       content:
-        "Работать с Алексом было одно удовольствие. Проект был сдан в срок и превзошел наши ожидания по качеству и функциональности. Его внимание к деталям и навыки решения проблем исключительны.",
+        "Заказали SMS-рассылку на 80 000 клиентов. За день акции выручка выросла в 2 раза! Команда RichSMM всё сделала быстро и профессионально — от текста до аналитики. Теперь работаем постоянно.",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
     },
     {
       id: 2,
-      name: "Марина Иванова",
-      position: "Директор продукта в Quantum Dynamics",
+      name: "Екатерина Волкова",
+      position: "Директор онлайн-школы «ProEnglish»",
       content:
-        "Алекс помог нам полностью перестроить нашу платформу с нуля. Его технические знания и понимание бизнес-потребностей привели к продукту, который значительно улучшил вовлеченность пользователей и конверсию.",
+        "Попросили сделать воронку продаж через WhatsApp. Результат превзошёл ожидания — конверсия выросла почти в 3 раза за месяц. Очень доволен командой: всё чётко, без воды, с реальными цифрами.",
       rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
     },
     {
       id: 3,
-      name: "Елена Козлова",
-      position: "VP Engineering в Alpine Ventures",
+      name: "Максим Орлов",
+      position: "Основатель стартапа LogiFlow",
       content:
-        "Меня впечатлила способность Алекса воплотить наше дизайн-видение в полнофункциональный сайт. Он был отзывчив, профессионален и давал ценные предложения по улучшению пользовательского опыта.",
-      rating: 4.5,
-      image: "/placeholder.svg?height=100&width=100",
+        "Разрабатывали Telegram-бота для нашего сервиса доставки. Ребята с первого раза поняли задачу, предложили крутые доработки. Бот работает без сбоев уже 8 месяцев. Рекомендую!",
+      rating: 5,
     },
     {
       id: 4,
-      name: "Дмитрий Соколов",
-      position: "CEO в Stellar Analytics",
+      name: "Ольга Светлова",
+      position: "Маркетолог, «Альфа Финанс»",
       content:
-        "Алекс разработал кастомный дашборд аналитики для нашей маркетинговой команды, который трансформировал наш подход к отслеживанию и оптимизации кампаний. Решение элегантное, интуитивное и именно то, что нам было нужно.",
-      rating: 5,
-      image: "/placeholder.svg?height=100&width=100",
+        "Viber-рассылки от RichSMM дали CTR 8%, чего мы не могли добиться через email годами. Прозрачная аналитика, брендированные сообщения — всё на высшем уровне.",
+      rating: 4.5,
     },
     {
       id: 5,
-      name: "Анна Новикова",
-      position: "Директор по операциям в Nova Industries",
+      name: "Дмитрий Захаров",
+      position: "CEO, агентство недвижимости «Простор»",
       content:
-        "Платформа, разработанная Алексом, стала прорывом для нашего бизнеса. Она быстрая, безопасная, и наши клиенты ценят бесшовный опыт. После запуска мы увидели рост эффективности на 40%.",
-      rating: 4.5,
-      image: "/placeholder.svg?height=100&width=100",
+        "Заказали CRM-систему на Python с интеграцией рассылок. Теперь менеджеры тратят в 3 раза меньше времени на рутину. Качество разработки отличное, поддержка всегда на связи.",
+      rating: 5,
     },
   ]
 
@@ -88,7 +83,7 @@ export default function Testimonials() {
           <Badge variant="outline" className="mb-4">
             Отзывы
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Довольные клиенты</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Что говорят клиенты</h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
@@ -103,23 +98,14 @@ export default function Testimonials() {
             <CarouselContent>
               {testimonials.map((testimonial) => (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 p-2">
-                  <Card className="h-full">
+                  <Card className="h-full border-border hover:border-primary/40 transition-colors">
                     <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden">
-                          <img
-                            src={testimonial.image || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold">{testimonial.name}</h4>
-                          <p className="text-sm text-muted-foreground">{testimonial.position}</p>
-                        </div>
+                      <div className="mb-4">{renderStars(testimonial.rating)}</div>
+                      <p className="text-muted-foreground flex-grow mb-6 text-sm leading-relaxed">"{testimonial.content}"</p>
+                      <div className="mt-auto border-t border-border pt-4">
+                        <h4 className="font-semibold">{testimonial.name}</h4>
+                        <p className="text-sm text-muted-foreground">{testimonial.position}</p>
                       </div>
-                      <p className="text-muted-foreground flex-grow mb-4">"{testimonial.content}"</p>
-                      <div className="mt-auto">{renderStars(testimonial.rating)}</div>
                     </CardContent>
                   </Card>
                 </CarouselItem>

@@ -1,80 +1,92 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import Icon from "@/components/ui/icon"
 
 export default function Hero() {
   const [text, setText] = useState("")
-  const fullText = "Разработчик"
+  const words = ["SMS-рассылки", "WhatsApp", "Telegram-боты", "Viber", "Python-приложения"]
+  const [wordIndex, setWordIndex] = useState(0)
 
   useEffect(() => {
     let i = 0
+    setText("")
+    const currentWord = words[wordIndex]
     const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setText(fullText.substring(0, i + 1))
+      if (i < currentWord.length) {
+        setText(currentWord.substring(0, i + 1))
         i++
       } else {
         clearInterval(typingInterval)
+        setTimeout(() => {
+          setWordIndex((prev) => (prev + 1) % words.length)
+        }, 1800)
       }
-    }, 100)
+    }, 80)
 
     return () => clearInterval(typingInterval)
-  }, [])
+  }, [wordIndex])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      })
+      window.scrollTo({ top: offsetTop, behavior: "smooth" })
     }
   }
 
+  const stats = [
+    { value: "8+", label: "лет в диджитал" },
+    { value: "50+", label: "реализованных проектов" },
+    { value: "500+", label: "довольных клиентов" },
+  ]
+
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32">
-      <div className="container mx-auto px-4">
+    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Привет, я <span className="text-primary">Алекс Морган</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
-              <span className="text-foreground">{text}</span>
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Icon name="Zap" size={14} />
+              Digital-эксперт с командой профессионалов
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+              Продвигаем бизнес через{" "}
+              <span className="text-primary">{text}</span>
               <span className="animate-blink">|</span>
-            </h2>
+            </h1>
+
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              Создаю качественные цифровые продукты с чистым кодом и современными технологиями.
-              Превращаю сложные задачи в элегантные решения.
+              RichSMM — ваш надёжный партнёр в digital. Рассылки по всем каналам, разработка Python-приложений любой сложности.
+              8+ лет опыта, своя команда, 50+ успешных проектов.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group" onClick={() => scrollToSection("projects")}>
-                Мои проекты
+              <Button size="lg" className="group" onClick={() => scrollToSection("contact")}>
+                Получить консультацию
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection("contact")}>
-                Связаться
+              <Button size="lg" variant="outline" onClick={() => scrollToSection("tech-stack")}>
+                Наши услуги
               </Button>
             </div>
 
-            <div className="flex gap-4 mt-8">
-              <Button variant="ghost" size="icon" className="rounded-full" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full" asChild>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
+            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + i * 0.1 }}
+                >
+                  <p className="text-3xl font-bold text-primary">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -82,15 +94,30 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative aspect-square max-w-md mx-auto"
+            className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full"></div>
-            <div className="absolute inset-4 bg-muted rounded-full overflow-hidden">
-              <img
-                src="/placeholder.svg?height=400&width=400"
-                alt="Алекс Морган"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative grid grid-cols-2 gap-4">
+              {[
+                { icon: "MessageSquare", label: "SMS-рассылки", color: "from-blue-500/20 to-blue-600/5" },
+                { icon: "MessageCircle", label: "WhatsApp", color: "from-green-500/20 to-green-600/5" },
+                { icon: "Send", label: "Telegram", color: "from-sky-500/20 to-sky-600/5" },
+                { icon: "Radio", label: "Viber", color: "from-violet-500/20 to-violet-600/5" },
+                { icon: "Code2", label: "Python-боты", color: "from-yellow-500/20 to-yellow-600/5" },
+                { icon: "Smartphone", label: "Приложения", color: "from-primary/20 to-primary/5" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + i * 0.1 }}
+                  className={`bg-gradient-to-br ${item.color} border border-border rounded-2xl p-5 flex flex-col items-center gap-3 hover:scale-105 transition-transform`}
+                >
+                  <div className="bg-primary/10 p-3 rounded-xl">
+                    <Icon name={item.icon as "MessageSquare"} size={24} className="text-primary" />
+                  </div>
+                  <span className="text-sm font-medium text-center">{item.label}</span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
