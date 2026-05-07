@@ -3,10 +3,13 @@ import {
   About,
   TechStack,
   Projects,
+  Guarantees,
+  FAQ,
   Testimonials,
   Contact,
   Footer,
   Navbar,
+  TelegramFloat,
 } from "@/components/landing"
 
 const Index = () => {
@@ -17,11 +20,14 @@ const Index = () => {
         <Hero />
         <About />
         <TechStack />
+        <Guarantees />
         <Projects />
+        <FAQ />
         <Testimonials />
         <Contact />
       </main>
       <Footer />
+      <TelegramFloat />
     </div>
   )
 }
