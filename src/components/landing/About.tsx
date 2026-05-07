@@ -9,21 +9,27 @@ export default function About() {
     visible: { opacity: 1, y: 0 },
   }
 
+  const stats = [
+    { value: "6 лет", label: "в digital", icon: "Megaphone" },
+    { value: "5 лет", label: "в продажах", icon: "TrendingUp" },
+    { value: "3 года", label: "в IT", icon: "Code2" },
+  ]
+
   const advantages = [
     {
       icon: "Users",
       title: "Собственная команда",
-      desc: "У нас есть своя команда опытных разработчиков и маркетологов. Никаких фрилансеров — только проверенные профессионалы.",
+      desc: "Своя команда опытных разработчиков и маркетологов. Никаких фрилансеров — только проверенные профессионалы.",
     },
     {
       icon: "TrendingUp",
       title: "Результат, а не обещания",
-      desc: "Каждый проект мы ведём от идеи до запуска. Вы получаете работающий инструмент, который приносит клиентов и прибыль.",
+      desc: "Каждый проект ведём от идеи до запуска. Вы получаете работающий инструмент, который приносит клиентов и прибыль.",
     },
     {
       icon: "GraduationCap",
       title: "Обучение и экспертиза",
-      desc: "Помимо услуг, мы проводим обучающие курсы в интернете — делимся знаниями и делаем digital доступным для каждого.",
+      desc: "Провожу обучающие курсы в интернете — делюсь практическими знаниями и делаю digital доступным для каждого.",
     },
   ]
 
@@ -45,7 +51,7 @@ export default function About() {
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -53,19 +59,35 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             variants={fadeIn}
           >
-            <h3 className="text-2xl font-bold mb-4">8+ лет в digital — ваш бизнес растёт быстрее</h3>
-            <p className="text-muted-foreground mb-6">
-              RichSMM — это digital-агентство с экспертизой в массовых коммуникациях и разработке. Мы помогаем бизнесу
-              выстраивать прямой контакт с клиентами через SMS, WhatsApp, Viber и Telegram, а также создаём
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-24 h-24 rounded-2xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center shrink-0 overflow-hidden">
+                <Icon name="User" size={40} className="text-primary/40" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">RichSMM</h3>
+                <p className="text-muted-foreground text-sm">Digital-эксперт · Разработчик · Предприниматель</p>
+                <div className="flex gap-2 mt-2 flex-wrap">
+                  {stats.map((s, i) => (
+                    <span key={i} className="inline-flex items-center gap-1 bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">
+                      <Icon name={s.icon as "Code2"} size={11} />
+                      {s.value} {s.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground mb-5">
+              RichSMM — digital-агентство с экспертизой в массовых коммуникациях и разработке. Помогаю бизнесу
+              выстраивать прямой контакт с клиентами через SMS, WhatsApp, Viber и Telegram, а также создаю
               автоматизированные Python-приложения под любые задачи.
             </p>
-            <p className="text-muted-foreground mb-6">
-              За 8 лет работы мы реализовали более 50 проектов — от малого бизнеса до крупных компаний. Наш подход
-              прост: разбираемся в вашей задаче, предлагаем оптимальное решение и доводим дело до результата.
+            <p className="text-muted-foreground mb-5">
+              За время работы реализовал более 50 проектов — от малого бизнеса до крупных компаний. Опыт
+              в продажах помогает понимать бизнес-задачи, а IT-экспертиза — решать их технически.
             </p>
             <p className="text-muted-foreground">
-              Мы также проводим обучения в интернете, где делимся практическими знаниями по digital-маркетингу
-              и автоматизации — потому что верим в то, что знания меняют бизнес.
+              Провожу обучения в интернете по digital-маркетингу и автоматизации — делюсь тем, что реально работает.
             </p>
           </motion.div>
 
