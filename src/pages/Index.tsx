@@ -1,5 +1,6 @@
 import {
   Hero,
+  TrustBar,
   About,
   TechStack,
   HowWeWork,
@@ -21,6 +22,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
         <About />
         <TechStack />
         <HowWeWork />

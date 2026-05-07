@@ -99,19 +99,51 @@ export default function TechStack() {
       ],
     },
     {
+      icon: "Target",
+      title: "Лидогенерация для бизнеса",
+      description: "Платите только за реальных целевых клиентов — никаких рисков",
+      price: "от 50 ₽",
+      priceNote: "за лида (пакетная система)",
+      tag: "Только за результат",
+      features: [
+        "Фиксированная цена за каждого лида",
+        "Пакетная система — выгоднее с объёмом",
+        "Только целевые контакты вашей ниши",
+        "Без слива бюджета на нецелевую аудиторию",
+        "Прозрачная отчётность по каждому лиду",
+        "Подходит для любой ниши и города",
+      ],
+    },
+    {
+      icon: "Workflow",
+      title: "Автоворонки и автоматизация",
+      description: "Настройка автоворонок и интеграций любого уровня сложности",
+      price: "индивидуально",
+      priceNote: "обсуждается под задачу",
+      tag: "Под ключ",
+      features: [
+        "Автоворонки продаж в мессенджерах",
+        "Интеграция с CRM (Bitrix24, AmoCRM и др.)",
+        "Цепочки писем, напоминаний, прогревов",
+        "Сегментация и автоматические сценарии",
+        "Связка с сайтом, формами, платёжными системами",
+        "Сопровождение и оптимизация воронок",
+      ],
+    },
+    {
       icon: "Code2",
-      title: "Python-приложения",
-      description: "Сайты, десктоп-приложения, боты — любые решения на Python",
+      title: "Разработка на Python",
+      description: "Сайты, десктоп-приложения, боты, парсеры — любая сложность",
       price: "по запросу",
       priceNote: "уточняйте у менеджера",
       tag: "Любая сложность",
       features: [
+        "Веб-сайты и веб-приложения",
+        "Десктоп-приложения для Windows/Mac/Linux",
         "Боты для Telegram, WhatsApp, Viber",
-        "Парсинг и автоматизация данных",
-        "API-интеграции с любыми сервисами",
+        "Парсинг данных и API-интеграции",
         "CRM и аналитические системы",
-        "Автоматизация бизнес-процессов",
-        "Техподдержка после сдачи",
+        "Техподдержка и развитие проекта",
       ],
     },
   ]
@@ -135,7 +167,7 @@ export default function TechStack() {
           <Badge variant="outline" className="mb-4">
             Услуги и цены
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Что мы делаем</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Что мы <span className="gradient-text">делаем</span></h2>
           <p className="text-muted-foreground max-w-xl mx-auto mt-2">Нажмите на карточку, чтобы увидеть подробности</p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>
@@ -151,8 +183,8 @@ export default function TechStack() {
               variants={fadeIn}
             >
               <Card
-                className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 ${
-                  selectedService === index ? "ring-2 ring-primary" : ""
+                className={`h-full cursor-pointer card-lift hover:shadow-2xl hover:shadow-primary/15 hover:border-primary/40 ${
+                  selectedService === index ? "ring-2 ring-primary border-primary/40" : ""
                 }`}
                 onClick={() => setSelectedService(selectedService === index ? null : index)}
               >

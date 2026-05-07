@@ -52,42 +52,59 @@ export default function Hero() {
   }, [])
 
   const stats = [
-    { value: "8+", label: "лет в диджитал" },
-    { value: "50+", label: "реализованных проектов" },
-    { value: `${clientCount}+`, label: "довольных клиентов" },
+    { value: "8+", label: "Лет в Диджитал" },
+    { value: "50+", label: "Реализованных проектов" },
+    { value: `${clientCount}+`, label: "Довольных клиентов" },
   ]
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-glow-pulse pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-violet-500/20 blur-3xl animate-glow-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Icon name="Zap" size={14} />
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-primary opacity-75 animate-ping" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-primary" />
+              </span>
               Digital-эксперт с командой профессионалов
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-[1.1]">
               Продвигаем бизнес через{" "}
-              <span className="text-primary">{text}</span>
-              <span className="animate-blink">|</span>
+              <span className="gradient-text">{text}</span>
+              <span className="animate-blink text-primary">|</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              RichSMM — ваш надёжный партнёр в digital. Рассылки по всем каналам, разработка Python-приложений любой сложности.
-              8+ лет опыта, своя команда, 50+ успешных проектов.
+            <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
+              RichSMM — надёжный партнёр в Диджитал. Рассылки по всем каналам, лидогенерация,
+              автоворонки и разработка любой сложности. <span className="text-foreground font-semibold">8+ лет опыта</span>, своя команда, 500+ клиентов.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group" onClick={() => scrollToSection("contact")}>
+              <Button size="lg" className="group shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow" onClick={() => scrollToSection("contact")}>
                 Получить консультацию
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" onClick={() => scrollToSection("tech-stack")}>
+                <Icon name="Sparkles" size={16} className="mr-2" />
                 Наши услуги
               </Button>
+            </div>
+
+            <div className="flex items-center gap-3 mt-6 text-sm text-muted-foreground">
+              <div className="flex -space-x-2">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="w-7 h-7 rounded-full border-2 border-background bg-gradient-to-br from-primary/40 to-violet-500/40" />
+                ))}
+              </div>
+              <span>
+                <span className="text-foreground font-semibold">500+ клиентов</span> уже работают с нами
+              </span>
             </div>
 
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border">
@@ -131,12 +148,12 @@ export default function Hero() {
             </div>
             <div className="relative grid grid-cols-2 gap-4">
               {[
-                { icon: "MessageSquare", label: "SMS-рассылки", color: "from-blue-500/20 to-blue-600/5" },
-                { icon: "MessageCircle", label: "WhatsApp", color: "from-green-500/20 to-green-600/5" },
                 { icon: "Send", label: "Telegram", color: "from-sky-500/20 to-sky-600/5" },
-                { icon: "Radio", label: "Viber", color: "from-violet-500/20 to-violet-600/5" },
-                { icon: "Code2", label: "Python-боты", color: "from-yellow-500/20 to-yellow-600/5" },
-                { icon: "Smartphone", label: "Приложения", color: "from-primary/20 to-primary/5" },
+                { icon: "MessageCircle", label: "WhatsApp", color: "from-green-500/20 to-green-600/5" },
+                { icon: "Radio", label: "Viber & IMO", color: "from-violet-500/20 to-violet-600/5" },
+                { icon: "Target", label: "Лидогенерация", color: "from-pink-500/20 to-pink-600/5" },
+                { icon: "Workflow", label: "Автоворонки", color: "from-yellow-500/20 to-yellow-600/5" },
+                { icon: "Code2", label: "Python разработка", color: "from-primary/20 to-primary/5" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
