@@ -36,10 +36,25 @@ export default function Hero() {
     }
   }
 
+  const [clientCount, setClientCount] = useState(0)
+
+  useEffect(() => {
+    const target = 523
+    const duration = 1800
+    const step = Math.ceil(target / (duration / 16))
+    let current = 0
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target)
+      setClientCount(current)
+      if (current >= target) clearInterval(timer)
+    }, 16)
+    return () => clearInterval(timer)
+  }, [])
+
   const stats = [
     { value: "8+", label: "лет в диджитал" },
     { value: "50+", label: "реализованных проектов" },
-    { value: "500+", label: "довольных клиентов" },
+    { value: `${clientCount}+`, label: "довольных клиентов" },
   ]
 
   return (
@@ -107,6 +122,10 @@ export default function Hero() {
                 </div>
                 <div className="absolute -bottom-1 -right-1 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
                   8+ лет
+                </div>
+                <div className="absolute top-1 left-1 flex items-center gap-1.5 bg-background/90 backdrop-blur-sm text-xs font-semibold px-2 py-1 rounded-full border border-border">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  Онлайн
                 </div>
               </div>
             </div>

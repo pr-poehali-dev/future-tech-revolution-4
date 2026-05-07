@@ -2,8 +2,11 @@ import {
   Hero,
   About,
   TechStack,
-  Projects,
+  HowWeWork,
   Guarantees,
+  Calculator,
+  Comparison,
+  Projects,
   FAQ,
   Testimonials,
   Contact,
@@ -20,6 +23,9 @@ const Index = () => {
         <Hero />
         <About />
         <TechStack />
+        <HowWeWork />
+        <Calculator />
+        <Comparison />
         <Guarantees />
         <Projects />
         <FAQ />
