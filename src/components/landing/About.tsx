@@ -60,8 +60,12 @@ export default function About() {
             variants={fadeIn}
           >
             <div className="flex items-center gap-6 mb-8">
-              <div className="w-24 h-24 rounded-2xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center shrink-0 overflow-hidden">
-                <Icon name="User" size={40} className="text-primary/40" />
+              <div className="w-24 h-24 rounded-2xl border-2 border-primary/20 shrink-0 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg"
+                  alt="RichSMM"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">RichSMM</h3>
