@@ -7,6 +7,7 @@ import {
   Guarantees,
   Calculator,
   Comparison,
+  PaymentSafety,
   Projects,
   FAQ,
   Testimonials,
@@ -29,6 +30,7 @@ const Index = () => {
         <Calculator />
         <Comparison />
         <Guarantees />
+        <PaymentSafety />
         <Projects />
         <FAQ />
         <Testimonials />
