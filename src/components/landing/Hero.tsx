@@ -96,6 +96,20 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
+                  <img
+                    src="https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg"
+                    alt="RichSMM"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="absolute -bottom-1 -right-1 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                  8+ лет
+                </div>
+              </div>
+            </div>
             <div className="relative grid grid-cols-2 gap-4">
               {[
                 { icon: "MessageSquare", label: "SMS-рассылки", color: "from-blue-500/20 to-blue-600/5" },
