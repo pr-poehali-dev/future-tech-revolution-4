@@ -32,14 +32,30 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const res = await fetch("https://functions.poehali.dev/8cc027c3-c324-4daa-80e9-8420d9b1fc75", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (data.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Я получил ваше сообщение и свяжусь в течение 15 минут.",
+        })
+        setFormData({ name: "", phone: "", service: "", message: "" })
+      } else {
+        throw new Error(data.error || "Ошибка")
+      }
+    } catch {
+      toast({
+        title: "Ошибка отправки",
+        description: "Попробуйте написать напрямую в Telegram @richsmm1",
+        variant: "destructive",
+      })
+    }
 
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в течение 15 минут в рабочее время.",
-    })
-
-    setFormData({ name: "", phone: "", service: "", message: "" })
     setIsSubmitting(false)
   }
 
@@ -47,8 +63,8 @@ export default function Contact() {
     {
       icon: "Phone",
       title: "Телефон / WhatsApp",
-      value: "+7 (999) 123-45-67",
-      link: "tel:+79991234567",
+      value: "+7 (965) 101-60-22",
+      link: "https://wa.me/79651016022",
     },
     {
       icon: "Send",

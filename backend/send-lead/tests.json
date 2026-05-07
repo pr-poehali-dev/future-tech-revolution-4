@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "name": "Отправка тестовой заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Тестов",
+        "phone": "+7 (999) 000-00-00",
+        "service": "SMS-рассылки",
+        "message": "Тестовая заявка с сайта"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
