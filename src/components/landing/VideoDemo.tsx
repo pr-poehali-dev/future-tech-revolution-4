@@ -2,18 +2,11 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
 
-const videos = [
-  {
-    title: "Как работает рассылка в мессенджерах",
-    desc: "Реальная демонстрация: запускаем рассылку в Telegram и WhatsApp за несколько минут",
-    embedUrl: "https://vk.com/video_ext.php?oid=1109954463&id=456239024&hd=2&autoplay=0",
-  },
-  {
-    title: "Инвайтинг и автоворонки в действии",
-    desc: "Показываем, как работает автоматическое привлечение подписчиков и автоворонка",
-    embedUrl: "https://vk.com/video_ext.php?oid=-238483575&id=456239017&hd=2&autoplay=0",
-  },
-]
+const video = {
+  title: "Рассылка в личные сообщения — реальная демонстрация",
+  desc: "Запускаем рассылку прямо на камеру: выбираем базу, пишем текст, смотрим как сообщения уходят получателям за несколько минут.",
+  embedUrl: "https://vk.com/video_ext.php?oid=-238483575&id=456239017&hd=2&autoplay=0",
+}
 
 export default function VideoDemo() {
   return (
@@ -36,39 +29,34 @@ export default function VideoDemo() {
           <div className="w-20 h-1 bg-primary mx-auto mt-4" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {videos.map((video, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.15 }}
-              className="rounded-2xl overflow-hidden border border-border bg-card shadow-lg hover:shadow-primary/10 hover:border-primary/30 transition-all"
-            >
-              <div className="relative aspect-video bg-black">
-                <iframe
-                  src={video.embedUrl}
-                  className="w-full h-full"
-                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  frameBorder="0"
-                />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="max-w-3xl mx-auto rounded-2xl overflow-hidden border border-border bg-card shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all"
+        >
+          <div className="relative aspect-video bg-black">
+            <iframe
+              src={video.embedUrl}
+              className="w-full h-full"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+            />
+          </div>
+          <div className="p-5">
+            <div className="flex items-start gap-3">
+              <div className="bg-primary/10 p-2 rounded-lg shrink-0 mt-0.5">
+                <Icon name="PlayCircle" size={20} className="text-primary" />
               </div>
-              <div className="p-5">
-                <div className="flex items-start gap-3">
-                  <div className="bg-primary/10 p-2 rounded-lg shrink-0 mt-0.5">
-                    <Icon name="PlayCircle" size={20} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">{video.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{video.desc}</p>
-                  </div>
-                </div>
+              <div>
+                <h3 className="font-bold mb-1">{video.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{video.desc}</p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

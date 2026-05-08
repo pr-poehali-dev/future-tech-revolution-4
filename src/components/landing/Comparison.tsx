@@ -78,7 +78,7 @@ export default function Comparison() {
           className="text-center mb-12"
         >
           <Badge variant="outline" className="mb-4">Сравнение</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Рассылки vs Яндекс.Директ и таргет</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Рассылки vs Яндекс.Директ и Таргет ВК</h2>
           <p className="text-muted-foreground max-w-lg mx-auto mt-2">
             Взял и запустил — без эксперта, без большого бюджета, сразу в цель
           </p>
@@ -100,7 +100,7 @@ export default function Comparison() {
               Рассылки RichSMM
             </div>
             <div className="bg-muted rounded-xl py-3 px-2 text-muted-foreground">
-              Директ / Таргет
+              Директ / Таргет ВК
             </div>
           </div>
 

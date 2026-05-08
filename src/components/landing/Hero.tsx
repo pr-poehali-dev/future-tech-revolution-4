@@ -96,9 +96,9 @@ export default function Hero() {
                 Получить консультацию
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection("tech-stack")}>
-                <Icon name="Sparkles" size={16} className="mr-2" />
-                Наши услуги
+              <Button size="lg" variant="outline" onClick={() => scrollToSection("video")}>
+                <Icon name="PlayCircle" size={16} className="mr-2" />
+                Смотреть видео
               </Button>
             </div>
 
