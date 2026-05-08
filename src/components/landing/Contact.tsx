@@ -69,8 +69,8 @@ export default function Contact() {
     {
       icon: "Send",
       title: "Telegram",
-      value: "@richsmm",
-      link: "https://t.me/richsmm",
+      value: "@richsmm1",
+      link: "https://t.me/richsmm1",
     },
     {
       icon: "Mail",
