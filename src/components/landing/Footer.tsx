@@ -33,6 +33,11 @@ export default function Footer() {
               <li><Link to="/blog/avtvoronka-chto-eto" className="hover:text-primary transition-colors">Автоворонки продаж</Link></li>
               <li><Link to="/blog/kupit-proksi-ipv4-ipv6" className="hover:text-primary transition-colors">Купить прокси IPv4/IPv6</Link></li>
               <li><Link to="/blog/proksi-dlya-parsinga" className="hover:text-primary transition-colors">Прокси для парсинга</Link></li>
+              <li><Link to="/blog/proksi-dlya-instagram" className="hover:text-primary transition-colors">Прокси для Instagram</Link></li>
+              <li><Link to="/blog/proksi-dlya-avito" className="hover:text-primary transition-colors">Прокси для Авито</Link></li>
+              <li><Link to="/blog/invayting-telegram-chto-eto" className="hover:text-primary transition-colors">Инвайтинг в Telegram</Link></li>
+              <li><Link to="/blog/alternativa-yandex-direkt" className="hover:text-primary transition-colors">Альтернатива Яндекс.Директу</Link></li>
+              <li><Link to="/blog/whatsapp-rassylka-biznes" className="hover:text-primary transition-colors">WhatsApp-рассылка для бизнеса</Link></li>
               <li><a href="https://t.me/richsmm1" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram @richsmm1</a></li>
             </ul>
           </div>
