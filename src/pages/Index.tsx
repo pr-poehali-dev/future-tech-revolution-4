@@ -20,11 +20,13 @@ import {
   CtaBar,
   ExitPopup,
   ChatReviews,
+  OfferTimer,
 } from "@/components/landing"
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <OfferTimer />
       <Navbar />
       <main>
         <Hero />

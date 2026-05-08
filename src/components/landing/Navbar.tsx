@@ -34,6 +34,7 @@ export default function Navbar() {
     { name: "Услуги", href: "tech-stack" },
     { name: "Проекты", href: "projects" },
     { name: "Отзывы", href: "testimonials" },
+    { name: "Клиенты", href: "chat-reviews" },
     { name: "Контакты", href: "contact" },
   ]
 

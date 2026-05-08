@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -34,6 +35,29 @@ const faqs = [
 ]
 
 export default function FAQ() {
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    }
+    const script = document.createElement("script")
+    script.type = "application/ld+json"
+    script.id = "faq-schema"
+    script.text = JSON.stringify(schema)
+    document.head.appendChild(script)
+    return () => {
+      document.getElementById("faq-schema")?.remove()
+    }
+  }, [])
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
