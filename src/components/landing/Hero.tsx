@@ -81,14 +81,14 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-[1.1]">
-              Привлекаем клиентов через{" "}
+              Привожу клиентов через{" "}
               <span className="gradient-text">{text}</span>
               <span className="animate-blink text-primary">|</span>
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              RichSMM — рассылки, лидогенерация и автоворонки для бизнеса, физ. лиц и Telegram-каналов. Разработка на Python любой сложности.{" "}
-              <span className="text-foreground font-semibold">8+ лет опыта</span>, своя команда, 500+ клиентов.
+              Я помогаю бизнесу получать заявки через рассылки, лидогенерацию и автоворонки — без слива бюджета на дорогую рекламу.{" "}
+              <span className="text-foreground font-semibold">8 лет в digital</span>, 500+ клиентов, своя команда разработчиков и маркетологов.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -119,7 +119,7 @@ export default function Hero() {
                 ))}
               </div>
               <span>
-                <span className="text-foreground font-semibold">500+ клиентов</span> уже работают с нами
+                <span className="text-foreground font-semibold">500+ клиентов</span> уже получают заявки
               </span>
             </div>
 

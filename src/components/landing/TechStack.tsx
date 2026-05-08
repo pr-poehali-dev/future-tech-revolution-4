@@ -162,6 +162,22 @@ export default function TechStack() {
         "Сопровождение и ответы на вопросы 30 дней",
       ],
     },
+    {
+      icon: "Search",
+      title: "SEO-продвижение сайтов",
+      description: "Вывод сайта в ТОП Яндекса и Google — стабильный органический трафик без рекламного бюджета",
+      price: "от 15 000 ₽",
+      priceNote: "в месяц",
+      tag: "Новинка",
+      features: [
+        "Технический аудит и устранение ошибок",
+        "Сбор семантического ядра и кластеризация",
+        "Оптимизация мета-тегов, заголовков, текстов",
+        "Работа со ссылочной массой и авторитетом",
+        "Создание SEO-статей и посадочных страниц",
+        "Ежемесячные отчёты с позициями и трафиком",
+      ],
+    },
   ]
 
   const fadeIn = {
@@ -183,8 +199,8 @@ export default function TechStack() {
           <Badge variant="outline" className="mb-4">
             Услуги и цены
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Что мы <span className="gradient-text">делаем</span></h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mt-2">Нажмите на карточку, чтобы увидеть подробности</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Чем я <span className="gradient-text">помогу</span></h2>
+          <p className="text-muted-foreground max-w-xl mx-auto mt-2">Нажмите на карточку, чтобы увидеть подробности и цены</p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>
 

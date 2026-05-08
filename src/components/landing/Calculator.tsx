@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 
 const channels = [
-  { id: "telegram", label: "Telegram", price: 5, icon: "Send" },
-  { id: "whatsapp", label: "WhatsApp", price: 5, icon: "MessageCircle" },
-  { id: "viber", label: "Viber", price: 3.5, icon: "Radio" },
-  { id: "imo", label: "IMO", price: 2.5, icon: "MessageSquare" },
-  { id: "sms", label: "SMS", price: 4, icon: "MessageSquare" },
+  { id: "telegram", label: "Telegram", price: 5, icon: "Send", color: "bg-sky-500/10 border-sky-500/30 text-sky-600 dark:text-sky-400" },
+  { id: "whatsapp", label: "WhatsApp", price: 5, icon: "MessageCircle", color: "bg-green-500/10 border-green-500/30 text-green-600 dark:text-green-400" },
+  { id: "viber", label: "Viber", price: 3.5, icon: "Radio", color: "bg-violet-500/10 border-violet-500/30 text-violet-600 dark:text-violet-400" },
+  { id: "imo", label: "IMO", price: 2.5, icon: "MessageSquare", color: "bg-orange-500/10 border-orange-500/30 text-orange-600 dark:text-orange-400" },
+  { id: "sms", label: "SMS", price: 4, icon: "Smartphone", color: "bg-gray-500/10 border-gray-500/30 text-gray-600 dark:text-gray-400" },
 ]
 
 export default function Calculator() {
@@ -28,9 +28,16 @@ export default function Calculator() {
     visible: { opacity: 1, y: 0 },
   }
 
-  const scrollToContact = () => {
-    const el = document.getElementById("contact")
-    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: "smooth" })
+  const sendToTelegram = () => {
+    const text = encodeURIComponent(
+      `Привет! Хочу запустить рассылку.\n\n` +
+      `📢 Канал: ${channel.label}\n` +
+      `📨 Сообщений: ${count.toLocaleString("ru")}\n` +
+      `💰 Бюджет: ~${totalCost.toLocaleString("ru")} ₽\n` +
+      `👥 Ожидаемо откликов: ~${conversions.toLocaleString("ru")}\n\n` +
+      `Рассчитайте точную стоимость, пожалуйста!`
+    )
+    window.open(`https://t.me/richsmm1?text=${text}`, "_blank")
   }
 
   return (
@@ -64,7 +71,7 @@ export default function Calculator() {
             <CardContent className="p-8 space-y-8">
               {/* Channel select */}
               <div>
-                <p className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">Канал рассылки</p>
+                <p className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">Выберите канал рассылки</p>
                 <div className="flex flex-wrap gap-2">
                   {channels.map((ch) => (
                     <button
@@ -72,7 +79,7 @@ export default function Calculator() {
                       onClick={() => setSelectedChannel(ch.id)}
                       className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all ${
                         selectedChannel === ch.id
-                          ? "bg-primary text-primary-foreground border-primary"
+                          ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20"
                           : "border-border text-muted-foreground hover:border-primary/50"
                       }`}
                     >
@@ -113,7 +120,7 @@ export default function Calculator() {
                 <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 text-center">
                   <Icon name="Users" size={20} className="text-primary mx-auto mb-2" />
                   <p className="text-2xl font-bold text-primary">{conversions.toLocaleString("ru")}</p>
-                  <p className="text-xs text-muted-foreground mt-1">Целевых действий (5%)</p>
+                  <p className="text-xs text-muted-foreground mt-1">Откликов (5%)</p>
                 </div>
                 <div className="bg-muted/50 rounded-xl p-4 text-center">
                   <Icon name="TrendingDown" size={20} className="text-primary mx-auto mb-2" />
@@ -122,10 +129,36 @@ export default function Calculator() {
                 </div>
               </div>
 
-              <Button className="w-full" size="lg" onClick={scrollToContact}>
-                Запустить рассылку на {count.toLocaleString("ru")} сообщений
-                <Icon name="ArrowRight" size={16} className="ml-2" />
-              </Button>
+              {/* Summary line */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl px-5 py-3 flex items-center gap-3">
+                <div className={`p-2 rounded-lg border ${channel.color}`}>
+                  <Icon name={channel.icon as "Send"} size={16} />
+                </div>
+                <p className="text-sm leading-snug">
+                  <span className="font-semibold">{channel.label}-рассылка</span> на{" "}
+                  <span className="font-semibold text-primary">{count.toLocaleString("ru")} человек</span> обойдётся{" "}
+                  <span className="font-semibold">{totalCost.toLocaleString("ru")} ₽</span> — примерно{" "}
+                  <span className="font-semibold text-primary">{costPerClient} ₽ за клиента</span>
+                </p>
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button className="flex-1 group" size="lg" onClick={sendToTelegram}>
+                  <Icon name="Send" size={16} className="mr-2" />
+                  Отправить расчёт в Telegram
+                </Button>
+                <Button variant="outline" size="lg" className="flex-1" onClick={() => {
+                  const el = document.getElementById("contact")
+                  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: "smooth" })
+                }}>
+                  Оставить заявку
+                </Button>
+              </div>
+
+              <p className="text-center text-xs text-muted-foreground">
+                Точная стоимость зависит от базы и задачи — уточним бесплатно за 15 минут
+              </p>
             </CardContent>
           </Card>
         </motion.div>
