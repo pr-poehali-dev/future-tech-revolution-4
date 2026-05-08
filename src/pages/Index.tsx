@@ -19,6 +19,7 @@ import {
   TelegramFloat,
   CtaBar,
   ExitPopup,
+  ChatReviews,
 } from "@/components/landing"
 
 const Index = () => {
@@ -40,6 +41,7 @@ const Index = () => {
         <Projects />
         <FAQ />
         <Testimonials />
+        <ChatReviews />
         <Contact />
       </main>
       <Footer />
