@@ -21,7 +21,7 @@ const rows = [
   {
     param: "Минимальный бюджет",
     mailing: true,
-    mailingNote: "От 500 ₽",
+    mailingNote: "От 2 500 ₽",
     direct: false,
     directNote: "От 10 000–20 000 ₽",
   },
