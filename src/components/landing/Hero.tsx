@@ -6,7 +6,7 @@ import Icon from "@/components/ui/icon"
 
 export default function Hero() {
   const [text, setText] = useState("")
-  const words = ["SMS-рассылки", "WhatsApp", "Telegram-боты", "Viber", "Python-приложения"]
+  const words = ["Telegram", "WhatsApp", "Viber & IMO", "SMS", "автоворонки", "Python-боты"]
   const [wordIndex, setWordIndex] = useState(0)
 
   useEffect(() => {
@@ -81,14 +81,14 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-[1.1]">
-              Продвигаем бизнес через{" "}
+              Привлекаем клиентов через{" "}
               <span className="gradient-text">{text}</span>
               <span className="animate-blink text-primary">|</span>
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              RichSMM — надёжный партнёр в Диджитал. Рассылки по всем каналам, лидогенерация,
-              автоворонки и разработка любой сложности. <span className="text-foreground font-semibold">8+ лет опыта</span>, своя команда, 500+ клиентов.
+              RichSMM — рассылки, лидогенерация и автоворонки для бизнеса, физ. лиц и Telegram-каналов. Разработка на Python любой сложности.{" "}
+              <span className="text-foreground font-semibold">8+ лет опыта</span>, своя команда, 500+ клиентов.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
