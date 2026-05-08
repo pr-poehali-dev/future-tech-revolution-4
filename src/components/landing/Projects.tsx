@@ -235,56 +235,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Собственный продукт: система автоворонки */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          variants={fadeIn}
-          className="mt-10 max-w-3xl mx-auto"
-        >
-          <div className="relative rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-500/8 via-card to-primary/5 overflow-hidden">
-            <div className="absolute top-4 right-4">
-              <Badge className="bg-violet-500/15 text-violet-400 border-violet-500/30 text-xs font-semibold">Собственный продукт</Badge>
-            </div>
-            <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
-              <div className="bg-violet-500/15 p-4 rounded-2xl shrink-0">
-                <Icon name="Zap" size={36} className="text-violet-400" />
-              </div>
-              <div className="flex-1">
-                <p className="text-xs font-semibold text-violet-400 uppercase tracking-wide mb-1">Для бизнеса и владельцев Telegram-каналов</p>
-                <h3 className="text-xl font-bold mb-2 leading-snug">Система автоворонки + Web App мессенджер для Telegram</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Не просто бот для приёма заявок — полноценная система продаж внутри Telegram. Превращает подписчиков канала в покупателей: автоматический прогрев, сегментация, приём оплат и выдача доступа без участия менеджера.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
-                  {[
-                    "Web App мессенджер — общение прямо в Telegram",
-                    "Автоворонка: прогрев → продажа → повтор",
-                    "Приём оплат и выдача доступа автоматически",
-                    "Аналитика: кто читал, кто купил, кто ушёл",
-                  ].map((f) => (
-                    <div key={f} className="flex items-start gap-2 text-sm">
-                      <Icon name="Check" size={14} className="text-violet-400 shrink-0 mt-0.5" />
-                      <span className="text-foreground">{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href="https://teletype.in/@richsmm1/GPq2ywkrrKY"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-violet-700 transition-colors"
-                >
-                  <Icon name="BookOpen" size={16} />
-                  Читать подробнее
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Собственный проект: прокси-магазин */}
         <motion.div
           initial="hidden"
@@ -292,7 +242,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
           variants={fadeIn}
-          className="mt-6 max-w-3xl mx-auto"
+          className="mt-10 max-w-3xl mx-auto"
         >
           <div className="relative rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card to-violet-500/5 overflow-hidden">
             <div className="absolute top-4 right-4">
