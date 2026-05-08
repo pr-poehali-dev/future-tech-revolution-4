@@ -1,7 +1,28 @@
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
+import { useRef, useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
+
+function Counter({ to, suffix = "", duration = 1800 }: { to: number; suffix?: string; duration?: number }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (!inView) return
+    let start = 0
+    const step = Math.ceil(to / (duration / 16))
+    const timer = setInterval(() => {
+      start = Math.min(start + step, to)
+      setCount(start)
+      if (start >= to) clearInterval(timer)
+    }, 16)
+    return () => clearInterval(timer)
+  }, [inView, to, duration])
+
+  return <span ref={ref}>{count}{suffix}</span>
+}
 
 export default function About() {
   const fadeIn = {
@@ -13,6 +34,13 @@ export default function About() {
     { value: "6 лет", label: "в digital", icon: "Megaphone" },
     { value: "5 лет", label: "в продажах", icon: "TrendingUp" },
     { value: "3 года", label: "в IT", icon: "Code2" },
+  ]
+
+  const bigStats = [
+    { to: 500, suffix: "+", label: "клиентов" },
+    { to: 50, suffix: "+", label: "проектов" },
+    { to: 8, suffix: "+", label: "лет опыта" },
+    { to: 100, suffix: "%", label: "доходимость" },
   ]
 
   const advantages = [
@@ -49,6 +77,32 @@ export default function About() {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Кто такой RichSMM</h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
+        </motion.div>
+
+        {/* Анимированные цифры */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={fadeIn}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+        >
+          {bigStats.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="bg-card border border-border rounded-2xl p-5 text-center"
+            >
+              <p className="text-4xl font-bold text-primary mb-1">
+                <Counter to={s.to} suffix={s.suffix} />
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">{s.label}</p>
+            </motion.div>
+          ))}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">

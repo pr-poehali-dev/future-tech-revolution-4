@@ -9,6 +9,7 @@ import {
   Comparison,
   PaymentSafety,
   VideoDemo,
+  MessageExamples,
   Projects,
   FAQ,
   Testimonials,
@@ -16,6 +17,7 @@ import {
   Footer,
   Navbar,
   TelegramFloat,
+  CtaBar,
 } from "@/components/landing"
 
 const Index = () => {
@@ -28,6 +30,7 @@ const Index = () => {
         <About />
         <TechStack />
         <HowWeWork />
+        <MessageExamples />
         <Calculator />
         <Comparison />
         <Guarantees />
@@ -40,6 +43,7 @@ const Index = () => {
       </main>
       <Footer />
       <TelegramFloat />
+      <CtaBar />
     </div>
   )
 }

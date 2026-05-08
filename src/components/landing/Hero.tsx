@@ -102,6 +102,16 @@ export default function Hero() {
               </Button>
             </div>
 
+            <div className="flex items-center gap-2 mt-4">
+              <span className="relative flex w-2.5 h-2.5">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-green-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-green-500" />
+              </span>
+              <span className="text-sm text-muted-foreground">
+                <span className="text-foreground font-semibold">Сейчас онлайн</span> — отвечу за 15 минут
+              </span>
+            </div>
+
             <div className="flex items-center gap-3 mt-6 text-sm text-muted-foreground">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (

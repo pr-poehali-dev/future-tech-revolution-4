@@ -209,16 +209,29 @@ export default function Projects() {
                             </li>
                           ))}
                         </ul>
-                        <Button
-                          size="sm"
-                          className="w-full"
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            setSelectedProject(project)
-                          }}
-                        >
-                          Подробнее о проекте
-                        </Button>
+                        <div className="flex flex-col gap-2">
+                          <Button
+                            size="sm"
+                            className="w-full"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setSelectedProject(project)
+                            }}
+                          >
+                            Подробнее о проекте
+                          </Button>
+                          {project.id === 6 && (
+                            <a
+                              href="https://teletype.in/@richsmm1/GPq2ywkrrKY"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-center text-sm text-primary hover:underline py-1"
+                            >
+                              Читать статью на Teletype →
+                            </a>
+                          )}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
