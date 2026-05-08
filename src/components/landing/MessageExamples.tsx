@@ -3,10 +3,10 @@ import { Badge } from "@/components/ui/badge"
 
 const examples = [
   {
-    platform: "WhatsApp",
-    color: "bg-[#128C7E]",
+    platform: "Telegram",
+    color: "bg-[#229ED9]",
     bubbleColor: "bg-white text-gray-900",
-    image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/f04b052e-97dc-4743-9837-b971cc12b3f4.jpg",
+    image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/80376938-4867-49df-a8ac-5168f073c883.jpg",
     label: "Telegram — инвайт в группу",
     desc: "Пользователь получает сообщение с приглашением и кнопкой — одно нажатие и он в вашем сообществе",
   },
@@ -19,12 +19,12 @@ const examples = [
     desc: "Прямое сообщение в личку с оффером, ссылкой и кодовым словом — высокий отклик за счёт персонализации",
   },
   {
-    platform: "WhatsApp",
-    color: "bg-[#25D366]",
-    bubbleColor: "bg-[#DCF8C6] text-gray-900",
-    image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/40ca87e7-5b3d-4b27-a41a-a92042e9a7f2.jpg",
-    label: "WhatsApp — рассылка с оффером",
-    desc: "Рассылка в WhatsApp — человек видит сообщение и кнопку действия прямо в мессенджере",
+    platform: "SMS",
+    color: "bg-[#6B7280]",
+    bubbleColor: "bg-white text-gray-900",
+    image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/1fab1281-be56-43db-86a7-827730bd5a39.jpg",
+    label: "SMS — рассылка",
+    desc: "SMS доходит до любого телефона без интернета — 100% доставляемость, открываемость выше 90%",
   },
 ]
 
