@@ -18,14 +18,7 @@ const buttons = [
     icon: "MessageCircle",
     delay: 1.7,
   },
-  {
-    href: "https://max.ru/79651016022",
-    label: "Max",
-    bg: "bg-[#7B61FF]",
-    shadow: "shadow-[#7B61FF]/40",
-    icon: "MessageSquare",
-    delay: 1.9,
-  },
+
 ]
 
 export default function TelegramFloat() {
