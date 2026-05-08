@@ -72,12 +72,7 @@ export default function Contact() {
       value: "@richsmm1",
       link: "https://t.me/richsmm1",
     },
-    {
-      icon: "Mail",
-      title: "Email",
-      value: "hello@richsmm.ru",
-      link: "mailto:hello@richsmm.ru",
-    },
+
   ]
 
   return (
@@ -186,13 +181,13 @@ export default function Contact() {
                         <Icon name={info.icon as "Phone"} size={20} className="text-primary" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-semibold mb-1">{info.title}</h4>
+                        <h4 className="text-base font-bold mb-0.5">{info.title}</h4>
                         {info.link ? (
-                          <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                          <a href={info.link} className="text-foreground hover:text-primary transition-colors text-base font-medium">
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-muted-foreground text-sm">{info.value}</p>
+                          <p className="text-foreground text-base font-medium">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -202,8 +197,8 @@ export default function Contact() {
 
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-5">
-                  <h4 className="font-semibold mb-2 text-primary">Почему RichSMM?</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-bold text-base mb-3 text-primary">Почему RichSMM?</h4>
+                  <ul className="space-y-2.5">
                     {[
                       "8+ лет в digital",
                       "Своя команда разработчиков",
@@ -211,8 +206,8 @@ export default function Contact() {
                       "Ответ за 15 минут",
                       "Бесплатный расчёт стоимости",
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Icon name="Check" size={13} className="text-primary shrink-0" />
+                      <li key={i} className="flex items-center gap-2 text-base font-medium text-foreground">
+                        <Icon name="Check" size={15} className="text-primary shrink-0" />
                         {item}
                       </li>
                     ))}
