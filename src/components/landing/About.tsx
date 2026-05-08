@@ -31,7 +31,7 @@ export default function About() {
   }
 
   const stats = [
-    { value: "6 лет", label: "в digital", icon: "Megaphone" },
+    { value: "8 лет", label: "в digital", icon: "Megaphone" },
     { value: "5 лет", label: "в продажах", icon: "TrendingUp" },
     { value: "3 года", label: "в IT", icon: "Code2" },
   ]

@@ -18,6 +18,7 @@ import {
   Navbar,
   TelegramFloat,
   CtaBar,
+  ExitPopup,
 } from "@/components/landing"
 
 const Index = () => {
@@ -44,6 +45,7 @@ const Index = () => {
       <Footer />
       <TelegramFloat />
       <CtaBar />
+      <ExitPopup />
     </div>
   )
 }

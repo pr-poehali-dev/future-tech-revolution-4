@@ -31,6 +31,8 @@ export default function Footer() {
               <li><Link to="/blog/rassylka-telegram-kak-zapustit" className="hover:text-primary transition-colors">Рассылка в Telegram</Link></li>
               <li><Link to="/blog/chto-takoe-lidogeneratsiya" className="hover:text-primary transition-colors">Что такое лидогенерация</Link></li>
               <li><Link to="/blog/avtvoronka-chto-eto" className="hover:text-primary transition-colors">Автоворонки продаж</Link></li>
+              <li><Link to="/blog/kupit-proksi-ipv4-ipv6" className="hover:text-primary transition-colors">Купить прокси IPv4/IPv6</Link></li>
+              <li><Link to="/blog/proksi-dlya-parsinga" className="hover:text-primary transition-colors">Прокси для парсинга</Link></li>
               <li><a href="https://t.me/richsmm1" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram @richsmm1</a></li>
             </ul>
           </div>
