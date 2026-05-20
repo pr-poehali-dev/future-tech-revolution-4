@@ -147,6 +147,22 @@ export default function TechStack() {
       ],
     },
     {
+      icon: "Gift",
+      title: "🎁 Бесплатный экспресс-разбор",
+      description: "Помогаю разобраться с выбором стратегии под конкретные цели и тип бизнеса — без воды и универсальных советов",
+      price: "Бесплатно",
+      priceNote: "15 минут, без обязательств",
+      tag: "Бесплатно",
+      features: [
+        "Краткий аудит вашей ситуации и ниши",
+        "2–3 конкретные рекомендации «что делать прямо сейчас»",
+        "Ответ на главный вопрос по продвижению",
+        "Подбор стратегии под ваш тип бизнеса и цели",
+        "Без продаж и обязательных покупок",
+        "Разбор в Telegram или по телефону — удобно вам",
+      ],
+    },
+    {
       icon: "BrainCircuit",
       title: "Стратегическая консультация",
       description: "Персональный маркетинговый разбор и план продвижения для вашего бизнеса или проекта",
@@ -215,24 +231,31 @@ export default function TechStack() {
               variants={fadeIn}
             >
               <Card
-                className={`h-full cursor-pointer card-lift hover:shadow-2xl hover:shadow-primary/15 hover:border-primary/40 ${
+                className={`h-full cursor-pointer card-lift hover:shadow-2xl hover:border-primary/40 ${
+                  service.tag === "Бесплатно"
+                    ? "border-green-400/60 bg-green-50/50 dark:bg-green-950/20 hover:shadow-green-400/20 shadow-green-300/20 shadow-md"
+                    : "hover:shadow-primary/15"
+                } ${
                   selectedService === index ? "ring-2 ring-primary border-primary/40" : ""
                 }`}
                 onClick={() => setSelectedService(selectedService === index ? null : index)}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="bg-primary/10 p-3 rounded-xl">
-                      <Icon name={service.icon as "MessageSquare"} size={24} className="text-primary" />
+                    <div className={`p-3 rounded-xl ${service.tag === "Бесплатно" ? "bg-green-100 dark:bg-green-900/40" : "bg-primary/10"}`}>
+                      <Icon name={service.icon as "MessageSquare"} size={24} className={service.tag === "Бесплатно" ? "text-green-600 dark:text-green-400" : "text-primary"} />
                     </div>
-                    <Badge variant="secondary" className="text-xs">{service.tag}</Badge>
+                    <Badge
+                      variant="secondary"
+                      className={`text-xs ${service.tag === "Бесплатно" ? "bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-300" : ""}`}
+                    >{service.tag}</Badge>
                   </div>
 
                   <h3 className="text-lg font-bold mb-1">{service.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
 
                   <div className="flex items-baseline gap-1 mb-4">
-                    <span className="text-2xl font-bold text-primary">{service.price}</span>
+                    <span className={`text-2xl font-bold ${service.tag === "Бесплатно" ? "text-green-600 dark:text-green-400" : "text-primary"}`}>{service.price}</span>
                     <span className="text-sm text-muted-foreground">{service.priceNote}</span>
                   </div>
 

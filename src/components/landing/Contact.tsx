@@ -63,8 +63,8 @@ export default function Contact() {
     {
       icon: "Phone",
       title: "Телефон / WhatsApp",
-      value: "+7 (965) 101-60-22",
-      link: "https://wa.me/79651016022",
+      value: "+7 (901) 345-60-08",
+      link: "https://wa.me/79013456008",
     },
     {
       icon: "Send",
