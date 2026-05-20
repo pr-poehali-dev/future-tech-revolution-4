@@ -7,22 +7,22 @@ const items = [
   {
     icon: "Smartphone",
     title: "Оплата через СБП",
-    desc: "Быстрый и безопасный перевод по номеру телефона. Без комиссий — мгновенное зачисление.",
+    desc: "Быстрый и безопасный перевод по номеру телефона. Без комиссий - мгновенное зачисление.",
   },
   {
     icon: "BadgeCheck",
     title: "Официально на ИП / Самозанятого",
-    desc: "Работаю легально. Выдаю чек по 422-ФЗ — для бухгалтерии и отчётности.",
+    desc: "Работаю легально. Выдаю чек по 422-ФЗ - для бухгалтерии и отчётности.",
   },
   {
     icon: "FileText",
     title: "Договор и закрывающие документы",
-    desc: "Для юр. лиц — заключаем договор, выставляем счёт, предоставляем акт.",
+    desc: "Для юр. лиц - заключаем договор, выставляем счёт, предоставляем акт.",
   },
   {
-    icon: "Sparkles",
-    title: "Кэшбек Т-Банка",
-    desc: "Платите через Т-Банк и получайте повышенный кэшбек по партнёрской программе.",
+    icon: "Headphones",
+    title: "Поддержка после оплаты",
+    desc: "На связи в Telegram - отвечаю быстро, помогаю с настройкой и решаю вопросы по ходу работы.",
   },
 ]
 
@@ -48,7 +48,7 @@ export default function PaymentSafety() {
             Платите <span className="gradient-text">безопасно</span> и удобно
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mt-2">
-            Работаю официально — никаких серых схем. Все способы оплаты прозрачны и защищены.
+            Работаю официально - никаких серых схем. Все способы оплаты прозрачны и защищены.
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4" />
         </motion.div>
@@ -84,14 +84,14 @@ export default function PaymentSafety() {
           variants={fadeIn}
           className="mt-10 max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-yellow-500/10 via-primary/10 to-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-4">
-            <div className="bg-yellow-500/20 p-4 rounded-2xl shrink-0">
-              <Icon name="Sparkles" size={28} className="text-yellow-600 dark:text-yellow-400" />
+          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-4">
+            <div className="bg-primary/20 p-4 rounded-2xl shrink-0">
+              <Icon name="ShieldCheck" size={28} className="text-primary" />
             </div>
             <div className="text-center md:text-left">
-              <h4 className="font-bold mb-1">Партнёр Т-Банк Кэшбек</h4>
+              <h4 className="font-bold mb-1">Работаем официально</h4>
               <p className="text-sm text-muted-foreground">
-                Платите через Т-Банк и получайте кэшбек на услуги RichSMM. Подробности уточняйте в Telegram.
+                ИП с 2017 года. Договор, счёт, закрывающие документы - всё по запросу. Никаких рисков для вашей бухгалтерии.
               </p>
             </div>
           </div>
