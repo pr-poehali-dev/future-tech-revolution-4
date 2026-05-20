@@ -14,11 +14,18 @@
     <meta name="yandex-verification" content="f877c84282ee0c7f"/>
     <meta name="google-site-verification" content="LST8E3w50aVV3jsksr4GEe7slmOFoLFCXJHDbH4XEz4"/>
     <meta name="format-detection" content="telephone=yes"/>
-    <meta name="geo.region" content="RU"/>
-    <meta name="geo.placename" content="Россия"/>
+    <meta name="geo.region" content="RU-MOW"/>
+    <meta name="geo.placename" content="Москва, Россия"/>
+    <meta name="geo.position" content="55.751244;37.618423"/>
+    <meta name="ICBM" content="55.751244, 37.618423"/>
+    <meta name="DC.language" content="ru"/>
+    <meta name="DC.coverage" content="Russia"/>
     <link rel="canonical" href="https://richsmm.site/"/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <!-- Open Graph (Facebook, VK, Telegram) -->
     <meta property="og:title" content="RichSMM - Рассылки Telegram, WhatsApp, SMS | от 2,5₽">
@@ -40,26 +47,52 @@
     <meta name="twitter:image" content="https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg">
     <meta name="twitter:image:alt" content="RichSMM - Рассылки и разработка под ключ">
 
-    <!-- Schema.org: LocalBusiness / ProfessionalService -->
+    <!-- Schema.org: LocalBusiness / ProfessionalService (для Яндекс.Бизнес и Алисы) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://richsmm.site/#organization",
       "name": "RichSMM",
+      "alternateName": "РичСММ",
       "url": "https://richsmm.site/",
-      "description": "Digital-агентство: массовые рассылки SMS, WhatsApp, Telegram, Viber, IMO. Лидогенерация, автоворонки, разработка на Python.",
-      "image": "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg",
+      "description": "Digital-агентство: массовые рассылки SMS, WhatsApp, Telegram, Viber, IMO. Лидогенерация, автоворонки, разработка на Python. Работаем по всей России.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://richsmm.site/favicon.svg",
+        "width": 512,
+        "height": 512
+      },
       "telephone": "+79651016022",
+      "email": "info@richsmm.site",
       "priceRange": "от 2,5 ₽",
       "currenciesAccepted": "RUB",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "paymentAccepted": "Наличные, Банковская карта, Банковский перевод",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RU",
+        "addressRegion": "Москва",
+        "addressLocality": "Москва"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.751244,
+        "longitude": 37.618423
+      },
       "areaServed": {
         "@type": "Country",
         "name": "Россия"
       },
       "sameAs": [
         "https://t.me/richsmm1",
-        "https://wa.me/79651016022"
+        "https://wa.me/79651016022",
+        "https://yandex.ru/maps/org/richsmm"
       ],
       "openingHoursSpecification": [
         {
@@ -69,6 +102,10 @@
           "closes": "22:00"
         }
       ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xPath": ["/html/head/title", "/html/head/meta[@name='description']/@content"]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
@@ -224,9 +261,14 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "RichSMM",
+      "@id": "https://richsmm.site/#website",
+      "name": "RichSMM — Рассылки и маркетинг",
       "url": "https://richsmm.site/",
       "inLanguage": "ru-RU",
+      "description": "Рассылки Telegram, WhatsApp, SMS от 2,5₽. Лидогенерация, автоворонки, разработка на Python.",
+      "publisher": {
+        "@id": "https://richsmm.site/#organization"
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -234,6 +276,38 @@
           "urlTemplate": "https://richsmm.site/?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema.org: Service (для голосового поиска Алисы по услугам) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Рассылки и реклама в мессенджерах",
+      "description": "Массовые рассылки Telegram, WhatsApp, Viber, IMO, SMS для бизнеса. Лидогенерация и привлечение клиентов от 2,5 рублей за сообщение.",
+      "provider": {
+        "@id": "https://richsmm.site/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Россия"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги по рекламе и рассылкам",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Рассылка в Telegram", "price": "5", "priceCurrency": "RUB", "description": "Массовая рассылка сообщений в Telegram от 5 рублей"},
+          {"@type": "Offer", "name": "Рассылка в WhatsApp", "price": "5", "priceCurrency": "RUB", "description": "Рассылка в WhatsApp бизнес-аудитории"},
+          {"@type": "Offer", "name": "SMS-рассылка", "price": "4", "priceCurrency": "RUB", "description": "SMS рассылка по базе клиентов"},
+          {"@type": "Offer", "name": "Лидогенерация", "price": "50", "priceCurrency": "RUB", "description": "Привлечение готовых клиентов для бизнеса"},
+          {"@type": "Offer", "name": "Реклама в мессенджерах", "description": "Таргетированная реклама и рассылки в мессенджерах"}
+        ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero-description", ".services-section"]
       }
     }
     </script>

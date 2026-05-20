@@ -1,7 +1,27 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: YandexMetrika
+Allow: /
+
+User-agent: YandexDirect
+Allow: /
+
+User-agent: YandexMarket
+Allow: /
+
+User-agent: Alicebot
 Allow: /
 
 User-agent: Googlebot
@@ -16,4 +36,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+Host: https://richsmm.site
 Sitemap: https://richsmm.site/sitemap.xml
