@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Audit real site",
+      "method": "POST",
+      "path": "/",
+      "body": {"url": "https://example.com"},
+      "expectedStatus": 200,
+      "expectedBody": {"overall_score": 73},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing URL",
+      "method": "POST",
+      "path": "/",
+      "body": {},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "URL обязателен"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

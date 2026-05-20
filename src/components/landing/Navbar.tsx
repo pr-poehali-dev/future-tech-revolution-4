@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { Menu, X } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -66,6 +67,9 @@ export default function Navbar({ timerHeight = 0 }: NavbarProps) {
                 {link.name}
               </button>
             ))}
+            <Link to="/seo-audit" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+              SEO Аудит
+            </Link>
             <Button onClick={() => scrollToSection("contact")}>Заказать</Button>
           </nav>
 
@@ -88,6 +92,9 @@ export default function Navbar({ timerHeight = 0 }: NavbarProps) {
                   {link.name}
                 </button>
               ))}
+              <Link to="/seo-audit" className="text-muted-foreground hover:text-foreground transition-colors py-2 text-left text-sm">
+                SEO Аудит
+              </Link>
               <Button className="w-full" onClick={() => scrollToSection("contact")}>Заказать</Button>
             </nav>
           </div>

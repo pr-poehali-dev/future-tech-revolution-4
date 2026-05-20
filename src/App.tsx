@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/landing/ThemeProvider";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import Proxy from "./pages/Proxy";
+import SeoAudit from "./pages/SeoAudit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Blog />} />
             <Route path="/proxy" element={<Proxy />} />
+            <Route path="/seo-audit" element={<SeoAudit />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
