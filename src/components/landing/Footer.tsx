@@ -11,7 +11,21 @@ export default function Footer() {
             <p className="text-lg font-bold text-primary mb-1">
               Rich<span className="text-foreground">SMM</span>
             </p>
-            <p className="text-sm text-muted-foreground">Digital-агентство. Рассылки и разработка.</p>
+            <p className="text-sm text-muted-foreground mb-3">Digital-агентство. Рассылки и разработка.</p>
+            <div className="space-y-1 text-sm text-muted-foreground mb-3">
+              <p><a href="tel:+79013456008" className="hover:text-primary transition-colors font-medium">+7 (901) 345-60-08</a></p>
+              <p><a href="mailto:info@richsmm.site" className="hover:text-primary transition-colors">info@richsmm.site</a></p>
+            </div>
+            <div className="flex gap-2 mt-3">
+              <a href="https://t.me/richsmm1" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 text-xs px-3 py-1.5 rounded-full transition-colors">
+                Telegram
+              </a>
+              <a href="https://wa.me/79013456008" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 bg-green-500/10 hover:bg-green-500/20 text-green-400 text-xs px-3 py-1.5 rounded-full transition-colors">
+                WhatsApp
+              </a>
+            </div>
           </div>
 
           <div>
@@ -44,8 +58,15 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-muted-foreground text-sm">&copy; {currentYear} RichSMM. Все права защищены.</p>
-          <p className="text-xs text-muted-foreground">8+ лет в digital · 50+ проектов · Своя команда</p>
+          <div className="flex flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
+            <span>&copy; {currentYear} RichSMM. Все права защищены.</span>
+            <span className="hidden md:inline">·</span>
+            <span>ИП Добровецкий Павел Александрович · ИНН 772159370235</span>
+          </div>
+          <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-muted-foreground">
+            <span>8+ лет в digital · 50+ проектов · Своя команда</span>
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
+          </div>
         </div>
       </div>
     </footer>

@@ -23,6 +23,7 @@ import {
   ChatReviews,
   OfferTimer,
 } from "@/components/landing"
+import CookieBanner from "@/components/landing/CookieBanner"
 
 const Index = () => {
   const [timerHeight, setTimerHeight] = useState(0)
@@ -68,6 +69,7 @@ const Index = () => {
       <TelegramFloat />
       <CtaBar />
       <ExitPopup />
+      <CookieBanner />
     </div>
   )
 }

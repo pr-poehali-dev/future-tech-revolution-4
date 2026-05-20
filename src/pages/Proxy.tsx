@@ -106,6 +106,8 @@ const fadeUp = {
 export default function Proxy() {
   useEffect(() => {
     document.title = "Купить мобильные прокси для рассылок — RichSMM"
+    const desc = document.querySelector('meta[name="description"]')
+    if (desc) desc.setAttribute("content", "Мобильные 4G/LTE прокси для рассылок WhatsApp, Telegram, VK и парсинга. Смена IP по запросу, ротация, API. От 990₽/месяц. Купить напрямую у RichSMM.")
   }, [])
 
   const [openFaq, setOpenFaq] = useState<number | null>(null)

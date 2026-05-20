@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -828,6 +829,15 @@ function ArticleCard({ article }: { article: typeof articles[0] }) {
 
 function ArticlePage({ slug }: { slug: string }) {
   const article = articles.find(a => a.slug === slug)
+
+  useEffect(() => {
+    if (article) {
+      document.title = `${article.title} — RichSMM`
+      const desc = document.querySelector('meta[name="description"]')
+      if (desc) desc.setAttribute("content", article.description)
+    }
+  }, [article])
+
   if (!article) return <NotFoundPage />
 
   const lines = article.content.split("\n")
@@ -896,6 +906,14 @@ function NotFoundPage() {
 
 export default function Blog() {
   const { slug } = useParams<{ slug?: string }>()
+
+  useEffect(() => {
+    if (!slug) {
+      document.title = "Блог о рассылках и лидогенерации — RichSMM"
+      const desc = document.querySelector('meta[name="description"]')
+      if (desc) desc.setAttribute("content", "Статьи о рассылках в Telegram, WhatsApp, Viber, SMS. Лидогенерация, автоворонки, Python-автоматизация — практические кейсы от RichSMM.")
+    }
+  }, [slug])
 
   if (slug) return <ArticlePage slug={slug} />
 

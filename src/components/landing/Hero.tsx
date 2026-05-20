@@ -83,8 +83,11 @@ export default function Hero() {
               <span className="animate-blink text-primary">|</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Я помогаю бизнесу получать заявки через рассылки, лидогенерацию и автоворонки - без слива бюджета на дорогую рекламу.{" "}
+            <p className="text-lg font-semibold text-foreground mb-2 max-w-lg leading-snug">
+              Экономьте до 30% бюджета — заявки через Telegram-рассылки от 5₽ с гарантией результата
+            </p>
+            <p className="text-base text-muted-foreground mb-8 max-w-lg leading-relaxed">
+              Помогаю бизнесу получать заявки без слива бюджета на дорогую рекламу.{" "}
               <span className="text-foreground font-semibold">8 лет в digital</span>, 500+ клиентов, своя команда разработчиков и маркетологов.
             </p>
 
