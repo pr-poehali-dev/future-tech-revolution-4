@@ -14,7 +14,7 @@ const rows = [
   {
     param: "Нужен эксперт по настройке",
     mailing: false,
-    mailingNote: "Не нужен — всё делаем мы",
+    mailingNote: "Не нужен - всё делаем мы",
     direct: true,
     directNote: "Платите специалисту от 15 000₽",
   },
@@ -30,14 +30,14 @@ const rows = [
     mailing: true,
     mailingNote: "Живые номера, без ботов",
     direct: false,
-    directNote: "До 30% — боты и скликивание",
+    directNote: "До 30% - боты и скликивание",
   },
   {
     param: "Прямой контакт с клиентом",
     mailing: true,
     mailingNote: "Личное сообщение в мессенджер",
     direct: false,
-    directNote: "Баннер — можно не заметить",
+    directNote: "Баннер - можно не заметить",
   },
   {
     param: "Результат виден сразу",
@@ -80,7 +80,7 @@ export default function Comparison() {
           <Badge variant="outline" className="mb-4">Сравнение</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Рассылки vs Яндекс.Директ и Таргет ВК</h2>
           <p className="text-muted-foreground max-w-lg mx-auto mt-2">
-            Взял и запустил — без эксперта, без большого бюджета, сразу в цель
+            Взял и запустил - без эксперта, без большого бюджета, сразу в цель
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>

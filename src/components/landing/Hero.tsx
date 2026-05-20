@@ -74,10 +74,7 @@ export default function Hero() {
                 </span>
                 Digital-эксперт с командой
               </div>
-              <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-600 dark:text-yellow-400 px-4 py-2 rounded-full text-sm font-semibold">
-                <Icon name="Sparkles" size={14} />
-                Партнёр Т-Банк Кэшбек
-              </div>
+
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-[1.1]">
@@ -87,7 +84,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Я помогаю бизнесу получать заявки через рассылки, лидогенерацию и автоворонки — без слива бюджета на дорогую рекламу.{" "}
+              Я помогаю бизнесу получать заявки через рассылки, лидогенерацию и автоворонки - без слива бюджета на дорогую рекламу.{" "}
               <span className="text-foreground font-semibold">8 лет в digital</span>, 500+ клиентов, своя команда разработчиков и маркетологов.
             </p>
 
@@ -108,7 +105,7 @@ export default function Hero() {
                 <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-green-500" />
               </span>
               <span className="text-sm text-muted-foreground">
-                <span className="text-foreground font-semibold">Сейчас онлайн</span> — отвечу за 15 минут
+                <span className="text-foreground font-semibold">Сейчас онлайн</span> - отвечу за 15 минут
               </span>
             </div>
 

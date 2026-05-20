@@ -54,7 +54,7 @@ export default function Calculator() {
           <Badge variant="outline" className="mb-4">Калькулятор</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Рассчитайте стоимость рассылки</h2>
           <p className="text-muted-foreground max-w-md mx-auto mt-2">
-            Средняя конверсия в целевое действие — <span className="text-primary font-semibold">5%</span> с нашими инструментами
+            Средняя конверсия в целевое действие - <span className="text-primary font-semibold">5%</span> с нашими инструментами
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>
@@ -84,7 +84,7 @@ export default function Calculator() {
                       }`}
                     >
                       <Icon name={ch.icon as "Send"} size={14} />
-                      {ch.label} — {ch.price}₽
+                      {ch.label} - {ch.price}₽
                     </button>
                   ))}
                 </div>
@@ -137,7 +137,7 @@ export default function Calculator() {
                 <p className="text-sm leading-snug">
                   <span className="font-semibold">{channel.label}-рассылка</span> на{" "}
                   <span className="font-semibold text-primary">{count.toLocaleString("ru")} человек</span> обойдётся{" "}
-                  <span className="font-semibold">{totalCost.toLocaleString("ru")} ₽</span> — примерно{" "}
+                  <span className="font-semibold">{totalCost.toLocaleString("ru")} ₽</span> - примерно{" "}
                   <span className="font-semibold text-primary">{costPerClient} ₽ за клиента</span>
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default function Calculator() {
               </div>
 
               <p className="text-center text-xs text-muted-foreground">
-                Точная стоимость зависит от базы и задачи — уточним бесплатно за 15 минут
+                Точная стоимость зависит от базы и задачи - уточним бесплатно за 15 минут
               </p>
             </CardContent>
           </Card>

@@ -7,24 +7,24 @@ const examples = [
     color: "bg-[#229ED9]",
     bubbleColor: "bg-white text-gray-900",
     image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/80376938-4867-49df-a8ac-5168f073c883.jpg",
-    label: "Telegram — инвайт в группу",
-    desc: "Пользователь получает сообщение с приглашением и кнопкой — одно нажатие и он в вашем сообществе",
+    label: "Telegram - инвайт в группу",
+    desc: "Пользователь получает сообщение с приглашением и кнопкой - одно нажатие и он в вашем сообществе",
   },
   {
     platform: "Telegram",
     color: "bg-[#229ED9]",
     bubbleColor: "bg-white text-gray-900",
     image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/d34480ea-b891-4ee1-b750-7987711d0d69.jpg",
-    label: "Telegram — личное сообщение",
-    desc: "Прямое сообщение в личку с оффером, ссылкой и кодовым словом — высокий отклик за счёт персонализации",
+    label: "Telegram - личное сообщение",
+    desc: "Прямое сообщение в личку с оффером, ссылкой и кодовым словом - высокий отклик за счёт персонализации",
   },
   {
     platform: "SMS",
     color: "bg-[#6B7280]",
     bubbleColor: "bg-white text-gray-900",
     image: "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/1fab1281-be56-43db-86a7-827730bd5a39.jpg",
-    label: "SMS — рассылка",
-    desc: "SMS доходит до любого телефона без интернета — 100% доставляемость, открываемость выше 90%",
+    label: "SMS - рассылка",
+    desc: "SMS доходит до любого телефона без интернета - 100% доставляемость, открываемость выше 90%",
   },
 ]
 
@@ -44,7 +44,7 @@ export default function MessageExamples() {
             Вот что <span className="gradient-text">получит</span> ваш клиент
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Реальные скрины — не макеты. Именно так выглядят сообщения у получателей
+            Реальные скрины - не макеты. Именно так выглядят сообщения у получателей
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4" />
         </motion.div>

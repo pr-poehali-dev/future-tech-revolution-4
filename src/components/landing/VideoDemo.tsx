@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
 
 const video = {
-  title: "Рассылка в личные сообщения — реальная демонстрация",
+  title: "Рассылка в личные сообщения - реальная демонстрация",
   desc: "Запускаем рассылку прямо на камеру: выбираем базу, пишем текст, смотрим как сообщения уходят получателям за несколько минут.",
   embedUrl: "https://vk.com/video_ext.php?oid=-238483575&id=456239017&hd=2&autoplay=1",
   vkUrl: "https://vk.com/video-238483575_456239017",
@@ -28,7 +28,7 @@ export default function VideoDemo() {
             Смотрите, как это <span className="gradient-text">работает</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Никаких обещаний — только реальный процесс. Запустим рассылку прямо на камеру.
+            Никаких обещаний - только реальный процесс. Запустим рассылку прямо на камеру.
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4" />
         </motion.div>

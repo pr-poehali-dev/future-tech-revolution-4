@@ -18,7 +18,7 @@ const steps = [
   {
     icon: "Zap",
     title: "Запуск",
-    desc: "Готовим базу, настраиваем рассылку и запускаем. Всё быстро — без долгих согласований.",
+    desc: "Готовим базу, настраиваем рассылку и запускаем. Всё быстро - без долгих согласований.",
     color: "from-primary/20 to-primary/5",
   },
   {
@@ -49,7 +49,7 @@ export default function HowWeWork() {
           <Badge variant="outline" className="mb-4">Процесс</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Как мы работаем</h2>
           <p className="text-muted-foreground max-w-md mx-auto mt-2">
-            От заявки до результата — быстро и прозрачно
+            От заявки до результата - быстро и прозрачно
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>

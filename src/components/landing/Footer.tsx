@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold mb-3">Ресурсы</p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li><Link to="/blog" className="hover:text-primary transition-colors">Блог — статьи о рассылках</Link></li>
+              <li><Link to="/blog" className="hover:text-primary transition-colors">Блог - статьи о рассылках</Link></li>
               <li><Link to="/blog/rassylka-telegram-kak-zapustit" className="hover:text-primary transition-colors">Рассылка в Telegram</Link></li>
               <li><Link to="/blog/chto-takoe-lidogeneratsiya" className="hover:text-primary transition-colors">Что такое лидогенерация</Link></li>
               <li><Link to="/blog/avtvoronka-chto-eto" className="hover:text-primary transition-colors">Автоворонки продаж</Link></li>

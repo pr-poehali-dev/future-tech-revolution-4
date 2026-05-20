@@ -91,7 +91,7 @@ export default function Contact() {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Обсудим ваш проект</h2>
           <p className="text-muted-foreground max-w-md mx-auto mt-2">
-            Оставьте заявку — ответим в течение 15 минут и бесплатно рассчитаем стоимость
+            Оставьте заявку - ответим в течение 15 минут и бесплатно рассчитаем стоимость
           </p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>
@@ -155,7 +155,7 @@ export default function Contact() {
                     />
                   </div>
                   <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                    {isSubmitting ? "Отправляем..." : "Отправить заявку — бесплатно"}
+                    {isSubmitting ? "Отправляем..." : "Отправить заявку - бесплатно"}
                   </Button>
                   <p className="text-xs text-muted-foreground text-center">
                     Нажимая кнопку, вы соглашаетесь на обработку персональных данных

@@ -106,7 +106,7 @@ export default function OfferTimer() {
                 <Icon name="Percent" size={16} className="text-primary" />
               </div>
               <p className="text-sm md:text-base font-semibold text-white leading-tight">
-                <span className="text-primary">Скидка 10%</span> на SEO-продвижение и консультацию —
+                <span className="text-primary">Скидка 10%</span> на SEO-продвижение и консультацию -
                 только до конца недели
               </p>
             </div>
