@@ -84,7 +84,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg font-semibold text-foreground mb-2 max-w-lg leading-snug">
-              Экономьте до 30% бюджета — заявки через Telegram-рассылки от 5₽ с гарантией результата
+              Экономьте до 80% бюджета - заявки через рассылки от 2.5₽ с гарантией результата
             </p>
             <p className="text-base text-muted-foreground mb-8 max-w-lg leading-relaxed">
               Помогаю бизнесу получать заявки без слива бюджета на дорогую рекламу.{" "}
