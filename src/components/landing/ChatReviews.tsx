@@ -156,7 +156,7 @@ export default function ChatReviews() {
           <div className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-full px-6 py-3">
             <Icon name="Repeat2" size={18} className="text-primary" />
             <span className="text-sm font-medium">
-              Более <span className="text-primary font-bold">70% клиентов</span> возвращаются повторно и советуют нас друзьям
+              Более <span className="text-primary font-bold">50% клиентов</span> возвращаются повторно и советуют нас друзьям
             </span>
           </div>
         </motion.div>

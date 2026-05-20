@@ -204,7 +204,7 @@ export default function Contact() {
                       "Своя команда разработчиков",
                       "50+ реализованных проектов",
                       "Ответ за 15 минут",
-                      "Бесплатный расчёт стоимости",
+                      "Бесплатная помощь со стратегией",
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-base font-medium text-foreground">
                         <Icon name="Check" size={15} className="text-primary shrink-0" />

@@ -306,7 +306,7 @@ export default function TechStack() {
           </p>
           <p className="text-sm text-primary font-medium">
             ⚠️ Цены могут меняться - актуальную стоимость уточняйте в{" "}
-            <a href="https://t.me/richsmm1" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary/80">
+            <a href="https://t.me/richsmm1" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary/80">
               Telegram @richsmm1
             </a>
           </p>

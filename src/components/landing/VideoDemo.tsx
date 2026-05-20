@@ -92,17 +92,7 @@ export default function VideoDemo() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="mt-10 text-center"
         >
-          <p className="text-muted-foreground text-sm">
-            Хотите живую демонстрацию под вашу задачу?{" "}
-            <a
-              href="https://t.me/richsmm1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary font-semibold hover:underline"
-            >
-              Напишите в Telegram →
-            </a>
-          </p>
+
         </motion.div>
       </div>
     </section>

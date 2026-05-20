@@ -91,7 +91,7 @@ export default function PaymentSafety() {
             <div className="text-center md:text-left">
               <h4 className="font-bold mb-1">Работаем официально</h4>
               <p className="text-sm text-muted-foreground">
-                ИП с 2017 года. Договор, счёт, закрывающие документы - всё по запросу. Никаких рисков для вашей бухгалтерии.
+                ИП. Договор, счёт, закрывающие документы — всё по запросу. Никаких рисков для вашей бухгалтерии.
               </p>
             </div>
           </div>

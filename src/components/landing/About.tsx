@@ -40,7 +40,7 @@ export default function About() {
     { to: 500, suffix: "+", label: "клиентов" },
     { to: 50, suffix: "+", label: "проектов" },
     { to: 8, suffix: "+", label: "лет опыта" },
-    { to: 100, suffix: "%", label: "доходимость" },
+    { to: 98, suffix: "%", label: "довольных клиентов" },
   ]
 
   const advantages = [
@@ -75,7 +75,7 @@ export default function About() {
           <Badge variant="outline" className="mb-4">
             О нас
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Кто такой RichSMM</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Признанный эксперт рынка мессенджер-маркетинга</h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
