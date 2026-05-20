@@ -1,3 +1,4 @@
+import { useState, useRef, useCallback } from "react"
 import {
   Hero,
   TrustBar,
@@ -24,11 +25,28 @@ import {
 } from "@/components/landing"
 
 const Index = () => {
+  const [timerHeight, setTimerHeight] = useState(0)
+  const timerRef = useRef<HTMLDivElement>(null)
+
+  const handleTimerRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) {
+      const observer = new ResizeObserver(() => {
+        setTimerHeight(node.offsetHeight)
+      })
+      observer.observe(node)
+      setTimerHeight(node.offsetHeight)
+    } else {
+      setTimerHeight(0)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
-      <OfferTimer />
-      <Navbar />
-      <main>
+      <div ref={handleTimerRef} className="fixed top-0 w-full z-[60]">
+        <OfferTimer />
+      </div>
+      <Navbar timerHeight={timerHeight} />
+      <main style={{ paddingTop: timerHeight }}>
         <Hero />
         <TrustBar />
         <About />

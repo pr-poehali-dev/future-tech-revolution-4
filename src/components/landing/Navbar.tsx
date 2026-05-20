@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-export default function Navbar() {
+interface NavbarProps {
+  timerHeight?: number
+}
+
+export default function Navbar({ timerHeight = 0 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -40,8 +44,9 @@ export default function Navbar() {
 
   return (
     <header
+      style={{ top: timerHeight }}
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
+        "fixed w-full z-50 transition-all duration-300",
         scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent",
       )}
     >

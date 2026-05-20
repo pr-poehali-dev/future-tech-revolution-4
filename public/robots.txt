@@ -16,4 +16,4 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-Sitemap: https://richsmm.ru/sitemap.xml
+Sitemap: https://richsmm.site/sitemap.xml
