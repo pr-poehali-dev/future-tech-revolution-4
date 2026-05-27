@@ -36,5 +36,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-Host: https://richsmm.site
+Host: richsmm.site
 Sitemap: https://richsmm.site/sitemap.xml
