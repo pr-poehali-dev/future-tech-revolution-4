@@ -202,7 +202,7 @@ export default function TechStack() {
   }
 
   return (
-    <section id="tech-stack" className="py-20">
+    <section id="tech-stack" aria-labelledby="services-heading" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -215,7 +215,7 @@ export default function TechStack() {
           <Badge variant="outline" className="mb-4">
             Услуги и цены
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Чем я <span className="gradient-text">помогу</span></h2>
+          <h2 id="services-heading" className="text-3xl md:text-5xl font-bold mb-4">Чем я <span className="gradient-text">помогу</span></h2>
           <p className="text-muted-foreground max-w-xl mx-auto mt-2">Нажмите на карточку, чтобы увидеть подробности и цены</p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
         </motion.div>

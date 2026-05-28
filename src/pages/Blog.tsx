@@ -998,6 +998,18 @@ export default function Blog() {
       document.title = "Блог о рассылках и лидогенерации — RichSMM"
       const desc = document.querySelector('meta[name="description"]')
       if (desc) desc.setAttribute("content", "Статьи о рассылках в Telegram, WhatsApp, Viber, SMS. Лидогенерация, автоворонки, Python-автоматизация — практические кейсы от RichSMM.")
+
+      const canonical = document.querySelector('link[rel="canonical"]')
+      if (canonical) canonical.setAttribute("href", "https://richsmm.site/blog")
+
+      const ogUrl = document.querySelector('meta[property="og:url"]')
+      if (ogUrl) ogUrl.setAttribute("content", "https://richsmm.site/blog")
+
+      const ogTitle = document.querySelector('meta[property="og:title"]')
+      if (ogTitle) ogTitle.setAttribute("content", "Блог о рассылках и лидогенерации — RichSMM")
+
+      const ogDesc = document.querySelector('meta[property="og:description"]')
+      if (ogDesc) ogDesc.setAttribute("content", "Статьи о рассылках в Telegram, WhatsApp, Viber, SMS. Лидогенерация, автоворонки, Python-автоматизация — практические кейсы от RichSMM.")
     }
   }, [slug])
 

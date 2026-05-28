@@ -15,6 +15,5 @@ Allow: /
 Allow: /blog
 Allow: /blog/*
 Allow: /seo-audit
-Allow: /proxy
 Allow: /llms.txt
 Allow: /sitemap.xml

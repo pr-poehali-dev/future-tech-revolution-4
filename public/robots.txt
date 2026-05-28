@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
 # AI crawlers — разрешаем для лучшего AI Visibility Score
 User-agent: GPTBot
@@ -26,7 +25,6 @@ Allow: /
 
 User-agent: Yandex
 Allow: /
-Crawl-delay: 1
 
 User-agent: YandexBot
 Allow: /
