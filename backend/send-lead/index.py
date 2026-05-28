@@ -1,5 +1,6 @@
 """
-Отправка заявки с сайта в Telegram-бот. Chat ID владельца фиксирован через секрет TELEGRAM_CHAT_ID.
+Отправка заявки с сайта RichSMM в Telegram владельцу.
+chat_id вшит напрямую как fallback, также берётся из env если задан.
 """
 import json
 import os
@@ -17,13 +18,19 @@ def handler(event: dict, context) -> dict:
         return {"statusCode": 200, "headers": headers, "body": ""}
 
     token = os.environ["TELEGRAM_BOT_TOKEN"]
-    chat_id = os.environ["TELEGRAM_CHAT_ID"]
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "6508047732")
 
     body = json.loads(event.get("body") or "{}")
-    name = body.get("name", "—")
-    phone = body.get("phone", "—")
-    service = body.get("service", "—")
-    message = body.get("message", "—")
+
+    def esc(s: str) -> str:
+        for c in ["\\", "*", "_", "`", "[", "]", "(", ")", "~", ">", "#", "+", "-", "=", "|", "{", "}", ".", "!"]:
+            s = s.replace(c, f"\\{c}")
+        return s
+
+    name = esc(str(body.get("name", "—")))
+    phone = esc(str(body.get("phone", "—")))
+    service = esc(str(body.get("service", "—")))
+    message = esc(str(body.get("message", "—")))
 
     text = (
         f"🔔 *Новая заявка с сайта RichSMM\\!*\n\n"

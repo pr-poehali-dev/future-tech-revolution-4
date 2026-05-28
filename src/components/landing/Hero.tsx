@@ -58,7 +58,7 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <section id="home" aria-label="Главная секция — RichSMM рассылки и лидогенерация" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
       <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-glow-pulse pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-violet-500/20 blur-3xl animate-glow-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
@@ -149,7 +149,10 @@ export default function Hero() {
                 <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
                   <img
                     src="https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg"
-                    alt="RichSMM"
+                    alt="Основатель RichSMM — digital-эксперт с 8-летним опытом в рассылках и лидогенерации"
+                    width={144}
+                    height={144}
+                    loading="eager"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

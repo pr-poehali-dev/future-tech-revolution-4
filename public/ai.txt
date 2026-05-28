@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# RichSMM — разрешаем AI-ботам индексировать весь контент сайта
+
+# Основная информация для AI-систем
+Site: https://richsmm.site/
+Name: RichSMM
+Description: Digital-агентство. Рассылки Telegram, WhatsApp, SMS, Viber, IMO от 2,5₽. Лидогенерация, автоворонки, Python-разработка. 8+ лет опыта.
+Contact: https://t.me/richsmm1
+Language: ru
+
+# Разрешённые страницы
+Allow: /
+Allow: /blog
+Allow: /blog/*
+Allow: /seo-audit
+Allow: /proxy
+Allow: /llms.txt
+Allow: /sitemap.xml

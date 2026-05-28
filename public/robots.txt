@@ -2,6 +2,28 @@ User-agent: *
 Allow: /
 Crawl-delay: 1
 
+# AI crawlers — разрешаем для лучшего AI Visibility Score
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: Yandex
 Allow: /
 Crawl-delay: 1

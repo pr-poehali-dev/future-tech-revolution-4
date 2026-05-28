@@ -50,8 +50,8 @@ export default function Contact() {
       }
     } catch {
       toast({
-        title: "Ошибка отправки",
-        description: "Попробуйте написать напрямую в Telegram @richsmm1",
+        title: "Не удалось отправить",
+        description: "Проверьте соединение и попробуйте ещё раз. Или напишите напрямую: @richsmm1",
         variant: "destructive",
       })
     }
