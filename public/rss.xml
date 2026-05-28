@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:yandex="http://news.yandex.ru">
+  <channel>
+    <title>RichSMM — блог о рассылках и лидогенерации</title>
+    <link>https://richsmm.site/blog</link>
+    <description>Статьи о рассылках в Telegram, WhatsApp, Viber, SMS. Лидогенерация, автоворонки, Python-автоматизация — практические кейсы от RichSMM.</description>
+    <language>ru</language>
+    <copyright>RichSMM, ИП Добровецкий П.А.</copyright>
+    <managingEditor>info@richsmm.site (Павел Добровецкий)</managingEditor>
+    <webMaster>info@richsmm.site</webMaster>
+    <lastBuildDate>Thu, 28 May 2026 00:00:00 +0300</lastBuildDate>
+    <ttl>1440</ttl>
+    <atom:link href="https://richsmm.site/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg</url>
+      <title>RichSMM</title>
+      <link>https://richsmm.site/</link>
+    </image>
+
+    <item>
+      <title>Рассылка для B2B: как привлечь корпоративных клиентов через мессенджеры</title>
+      <link>https://richsmm.site/blog/rassylka-b2b-klientam</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/rassylka-b2b-klientam</guid>
+      <description>Как использовать рассылки для привлечения B2B-клиентов: какие каналы работают, как составить оффер и получить первые сделки.</description>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0300</pubDate>
+      <category>Лидогенерация</category>
+    </item>
+
+    <item>
+      <title>WhatsApp-бот для бизнеса: автоматизация продаж и поддержки</title>
+      <link>https://richsmm.site/blog/whatsapp-bot-dlya-biznesa</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/whatsapp-bot-dlya-biznesa</guid>
+      <description>Как WhatsApp-бот помогает бизнесу принимать заявки, отвечать на вопросы и делать рассылки. Стоимость разработки и реальные кейсы.</description>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0300</pubDate>
+      <category>WhatsApp</category>
+    </item>
+
+    <item>
+      <title>Как продвигать бизнес без рекламного бюджета: 5 рабочих способов 2026</title>
+      <link>https://richsmm.site/blog/kak-prodvigat-biznes-bez-reklamnogo-byudzheta</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/kak-prodvigat-biznes-bez-reklamnogo-byudzheta</guid>
+      <description>Реальные способы привлечь клиентов без больших вложений в рекламу: мессенджеры, SEO, контент, партнёрства и автоматизация.</description>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0300</pubDate>
+      <category>Лидогенерация</category>
+    </item>
+
+    <item>
+      <title>Telegram-бот для бизнеса: автоматизация, продажи и поддержка клиентов в 2026</title>
+      <link>https://richsmm.site/blog/telegram-bot-dlya-biznesa-2026</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/telegram-bot-dlya-biznesa-2026</guid>
+      <description>Полный разбор: зачем бизнесу Telegram-бот в 2026 году, что он умеет, сколько стоит разработка и реальные кейсы из практики.</description>
+      <pubDate>Mon, 12 May 2026 00:00:00 +0300</pubDate>
+      <category>Telegram</category>
+    </item>
+
+    <item>
+      <title>Массовая рассылка в Telegram 2026: как запустить и получить заявки</title>
+      <link>https://richsmm.site/blog/massovaya-rassylka-telegram-2026</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/massovaya-rassylka-telegram-2026</guid>
+      <description>Актуальное руководство по массовой рассылке в Telegram в 2026 году: инструменты, цены, реальные кейсы и стоимость лида.</description>
+      <pubDate>Sun, 10 May 2026 00:00:00 +0300</pubDate>
+      <category>Telegram</category>
+    </item>
+
+    <item>
+      <title>Как собрать базу клиентов с нуля: 7 способов для малого бизнеса</title>
+      <link>https://richsmm.site/blog/kak-sobrat-bazu-klientov</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/kak-sobrat-bazu-klientov</guid>
+      <description>Практические способы собрать базу для рассылки: лид-магниты, формы захвата, тематические сообщества и другие методы.</description>
+      <pubDate>Mon, 05 May 2026 00:00:00 +0300</pubDate>
+      <category>Лидогенерация</category>
+    </item>
+
+    <item>
+      <title>SMS vs Telegram-рассылка: что выбрать для вашего бизнеса</title>
+      <link>https://richsmm.site/blog/sms-rassylka-vs-telegram</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/sms-rassylka-vs-telegram</guid>
+      <description>Сравниваем SMS и Telegram-рассылки по цене, охвату, открываемости и конверсии. Когда что выбрать и как совместить оба канала.</description>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0300</pubDate>
+      <category>SMS</category>
+    </item>
+
+    <item>
+      <title>Альтернатива Яндекс.Директу: где рекламироваться дешевле в 2025</title>
+      <link>https://richsmm.site/blog/alternativa-yandex-direkt</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/alternativa-yandex-direkt</guid>
+      <description>Стоимость лида в Яндекс.Директ выросла в 3–5 раз. Разбираем реальные альтернативы: Telegram, WhatsApp, ВКонтакте, рассылки.</description>
+      <pubDate>Mon, 28 Apr 2026 00:00:00 +0300</pubDate>
+      <category>Лидогенерация</category>
+    </item>
+
+    <item>
+      <title>Инвайтинг в Telegram: как добавить людей в группу без спама</title>
+      <link>https://richsmm.site/blog/invayting-telegram-chto-eto</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/invayting-telegram-chto-eto</guid>
+      <description>Что такое инвайтинг в Telegram, как он работает, сколько стоит и почему это легальный способ набрать участников в канал или группу.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0300</pubDate>
+      <category>Telegram</category>
+    </item>
+
+    <item>
+      <title>Автоворонка продаж: что это и как она работает</title>
+      <link>https://richsmm.site/blog/avtvoronka-chto-eto</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/avtvoronka-chto-eto</guid>
+      <description>Объясняем простыми словами, что такое автоворонка, зачем она нужна и как настроить автоматические продажи через мессенджеры.</description>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0300</pubDate>
+      <category>Автоворонки</category>
+    </item>
+
+    <item>
+      <title>Что такое лидогенерация и как получать клиентов от 50 ₽</title>
+      <link>https://richsmm.site/blog/chto-takoe-lidogeneratsiya</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/chto-takoe-lidogeneratsiya</guid>
+      <description>Простыми словами о лидогенерации: что это такое, как работает и почему рассылки дешевле и эффективнее Яндекс.Директа.</description>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0300</pubDate>
+      <category>Лидогенерация</category>
+    </item>
+
+    <item>
+      <title>Как запустить рассылку в Telegram: пошаговая инструкция 2025</title>
+      <link>https://richsmm.site/blog/rassylka-telegram-kak-zapustit</link>
+      <guid isPermaLink="true">https://richsmm.site/blog/rassylka-telegram-kak-zapustit</guid>
+      <description>Разбираем, как сделать массовую рассылку в Telegram с нуля — какие инструменты использовать, сколько это стоит и как получить результат.</description>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0300</pubDate>
+      <category>Telegram</category>
+    </item>
+
+  </channel>
+</rss>

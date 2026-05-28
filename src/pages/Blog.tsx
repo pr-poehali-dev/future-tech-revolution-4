@@ -884,36 +884,60 @@ function ArticlePage({ slug }: { slug: string }) {
       const existingSchema = document.getElementById("article-schema")
       if (existingSchema) existingSchema.remove()
 
+      const wordCount = article.content.split(/\s+/).filter(Boolean).length
+
       const schema = document.createElement("script")
       schema.id = "article-schema"
       schema.type = "application/ld+json"
       schema.text = JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
+        "@id": `https://richsmm.site/blog/${article.slug}#article`,
         "headline": article.title,
+        "name": article.title,
         "description": article.description,
         "datePublished": article.date,
-        "dateModified": article.date,
+        "dateModified": "2026-05-28",
+        "wordCount": wordCount,
+        "timeRequired": `PT${article.readTime.replace(/[^0-9]/g, "")}M`,
+        "inLanguage": "ru-RU",
+        "url": `https://richsmm.site/blog/${article.slug}`,
+        "isPartOf": {
+          "@type": "Blog",
+          "@id": "https://richsmm.site/blog#blog",
+          "name": "Блог RichSMM — о рассылках и лидогенерации",
+          "url": "https://richsmm.site/blog"
+        },
         "author": {
-          "@type": "Organization",
-          "name": "RichSMM",
-          "url": "https://richsmm.site/"
+          "@type": "Person",
+          "name": "Павел Добровецкий",
+          "url": "https://richsmm.site/",
+          "sameAs": ["https://t.me/richsmm1"]
         },
         "publisher": {
           "@type": "Organization",
+          "@id": "https://richsmm.site/#organization",
           "name": "RichSMM",
+          "url": "https://richsmm.site/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://richsmm.site/favicon.svg"
+            "url": "https://richsmm.site/favicon.svg",
+            "width": 512,
+            "height": 512
           }
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": `https://richsmm.site/blog/${article.slug}`
         },
-        "url": `https://richsmm.site/blog/${article.slug}`,
-        "inLanguage": "ru-RU",
-        "keywords": article.category
+        "articleSection": article.category,
+        "keywords": [article.category, "рассылки", "лидогенерация", "RichSMM"],
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg",
+          "width": 1200,
+          "height": 630
+        }
       })
       document.head.appendChild(schema)
 
@@ -1010,6 +1034,39 @@ export default function Blog() {
 
       const ogDesc = document.querySelector('meta[property="og:description"]')
       if (ogDesc) ogDesc.setAttribute("content", "Статьи о рассылках в Telegram, WhatsApp, Viber, SMS. Лидогенерация, автоворонки, Python-автоматизация — практические кейсы от RichSMM.")
+
+      // Blog schema для страницы списка статей
+      const existingBlogSchema = document.getElementById("blog-list-schema")
+      if (existingBlogSchema) existingBlogSchema.remove()
+      const blogSchema = document.createElement("script")
+      blogSchema.id = "blog-list-schema"
+      blogSchema.type = "application/ld+json"
+      blogSchema.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": "https://richsmm.site/blog#blog",
+        "name": "Блог RichSMM — о рассылках и лидогенерации",
+        "url": "https://richsmm.site/blog",
+        "description": "Статьи о рассылках в Telegram, WhatsApp, Viber, SMS. Лидогенерация, автоворонки, Python-автоматизация.",
+        "inLanguage": "ru-RU",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://richsmm.site/#organization",
+          "name": "RichSMM"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Павел Добровецкий",
+          "url": "https://richsmm.site/",
+          "sameAs": ["https://t.me/richsmm1"]
+        }
+      })
+      document.head.appendChild(blogSchema)
+
+      return () => {
+        const s = document.getElementById("blog-list-schema")
+        if (s) s.remove()
+      }
     }
   }, [slug])
 
