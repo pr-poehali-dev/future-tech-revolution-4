@@ -117,7 +117,10 @@ export default function About() {
               <div className="w-24 h-24 rounded-2xl border-2 border-primary/20 shrink-0 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/projects/660a37a1-4c8b-4667-b077-daacd102c4a3/bucket/8ebfb795-12bd-4069-b1a9-adea9f9f64e8.jpg"
-                  alt="RichSMM"
+                  alt="Основатель RichSMM — эксперт по рассылкам и лидогенерации"
+                  width={96}
+                  height={96}
+                  loading="lazy"
                   className="w-full h-full object-cover object-top"
                 />
               </div>

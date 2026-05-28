@@ -75,6 +75,9 @@ export default function MessageExamples() {
                   <img
                     src={ex.image}
                     alt={ex.label}
+                    width={200}
+                    height={340}
+                    loading="lazy"
                     className="w-full object-cover object-top"
                     style={{ maxHeight: "340px" }}
                   />

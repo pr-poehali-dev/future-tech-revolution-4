@@ -39,19 +39,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold mb-3">Ресурсы</p>
+            <p className="text-sm font-semibold mb-3">Полезные статьи</p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li><Link to="/blog" className="hover:text-primary transition-colors">Блог - статьи о рассылках</Link></li>
+              <li><Link to="/blog" className="hover:text-primary transition-colors">Блог — рассылки и маркетинг</Link></li>
               <li><Link to="/blog/rassylka-telegram-kak-zapustit" className="hover:text-primary transition-colors">Рассылка в Telegram</Link></li>
+              <li><Link to="/blog/massovaya-rassylka-telegram-2026" className="hover:text-primary transition-colors">Массовая рассылка Telegram 2026</Link></li>
               <li><Link to="/blog/chto-takoe-lidogeneratsiya" className="hover:text-primary transition-colors">Что такое лидогенерация</Link></li>
               <li><Link to="/blog/avtvoronka-chto-eto" className="hover:text-primary transition-colors">Автоворонки продаж</Link></li>
-              <li><Link to="/blog/kupit-proksi-ipv4-ipv6" className="hover:text-primary transition-colors">Купить прокси IPv4/IPv6</Link></li>
-              <li><Link to="/blog/proksi-dlya-parsinga" className="hover:text-primary transition-colors">Прокси для парсинга</Link></li>
-              <li><Link to="/blog/proksi-dlya-instagram" className="hover:text-primary transition-colors">Прокси для Instagram</Link></li>
-              <li><Link to="/blog/proksi-dlya-avito" className="hover:text-primary transition-colors">Прокси для Авито</Link></li>
+              <li><Link to="/blog/telegram-bot-dlya-biznesa-2026" className="hover:text-primary transition-colors">Telegram-бот для бизнеса</Link></li>
               <li><Link to="/blog/invayting-telegram-chto-eto" className="hover:text-primary transition-colors">Инвайтинг в Telegram</Link></li>
               <li><Link to="/blog/alternativa-yandex-direkt" className="hover:text-primary transition-colors">Альтернатива Яндекс.Директу</Link></li>
               <li><Link to="/blog/whatsapp-rassylka-biznes" className="hover:text-primary transition-colors">WhatsApp-рассылка для бизнеса</Link></li>
+              <li><Link to="/blog/rassylka-b2b-klientam" className="hover:text-primary transition-colors">Рассылки для B2B</Link></li>
               <li><a href="https://t.me/richsmm1" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram @richsmm1</a></li>
             </ul>
           </div>
