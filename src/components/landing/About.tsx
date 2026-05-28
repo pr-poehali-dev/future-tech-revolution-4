@@ -121,6 +121,7 @@ export default function About() {
                   width={96}
                   height={96}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top"
                 />
               </div>

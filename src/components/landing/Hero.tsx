@@ -174,6 +174,8 @@ export default function Hero() {
                     width={144}
                     height={144}
                     loading="eager"
+                    fetchPriority="high"
+                    decoding="sync"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

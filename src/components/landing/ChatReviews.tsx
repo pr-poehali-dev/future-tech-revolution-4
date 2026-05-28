@@ -129,8 +129,11 @@ export default function ChatReviews() {
                 <img
                   src={client.screenshot}
                   alt={`Переписка с ${client.name}`}
+                  width={600}
+                  height={320}
                   className="w-full object-cover object-top max-h-80"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-card to-transparent" />
               </div>

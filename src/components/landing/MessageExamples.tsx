@@ -78,6 +78,7 @@ export default function MessageExamples() {
                     width={200}
                     height={340}
                     loading="lazy"
+                    decoding="async"
                     className="w-full object-cover object-top"
                     style={{ maxHeight: "340px" }}
                   />
