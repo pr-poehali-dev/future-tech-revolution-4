@@ -248,54 +248,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Собственный проект: прокси-магазин */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          variants={fadeIn}
-          className="mt-10 max-w-3xl mx-auto"
-        >
-          <div className="relative rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card to-violet-500/5 overflow-hidden">
-            <div className="absolute top-4 right-4">
-              <Badge className="bg-primary/15 text-primary border-primary/20 text-xs font-semibold">Собственный проект</Badge>
-            </div>
-            <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
-              <div className="bg-primary/10 p-4 rounded-2xl shrink-0">
-                <Icon name="Shield" size={36} className="text-primary" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2">Прокси от 10 рублей</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Собственный Telegram-магазин прокси-серверов. IPv4, IPv6, резидентские и мобильные прокси для парсинга, анонимности, автоматизации и рассылок. Быстро, дёшево, без лишних вопросов.
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-                  {[
-                    { label: "IPv4", desc: "Стабильные, быстрые" },
-                    { label: "IPv6", desc: "Дёшево, пачками" },
-                    { label: "Резидентские", desc: "Максимальный траст" },
-                    { label: "Мобильные", desc: "4G/5G операторы" },
-                  ].map((type) => (
-                    <div key={type.label} className="bg-background/60 border border-border rounded-xl p-3 text-center">
-                      <p className="font-bold text-sm">{type.label}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{type.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href="http://t.me/proxye_bot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors"
-                >
-                  <Icon name="Send" size={16} />
-                  Открыть магазин в Telegram
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
           {selectedProject && (
